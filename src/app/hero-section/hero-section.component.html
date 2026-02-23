@@ -1,0 +1,32 @@
+<div class="hero">
+
+<div class="title">
+    <span>Frontend Developer</span>
+    <h1>Ioannis Karalis</h1>
+
+    <div class="buttons">
+        <button class="marquee-btn"><span>Check my work</span></button>
+        <button class="marquee-btn"><span>Contact me</span></button>
+    </div>
+
+</div>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    
+    <div class="ticker-content">
+      @for (item of tickerItems; track $index) {
+        <span>{{ item }}</span>
+      }
+    </div>
+
+    <div class="ticker-content" aria-hidden="true">
+      @for (item of tickerItems; track $index) {
+        <span>{{ item }}</span>
+      }
+    </div>
+
+  </div>
+</div>
+
+</div>

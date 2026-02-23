@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Karla:wght@400;700&display=swap');
+
+/* 2. Nur die Variablen festlegen (kein Styling von HTML-Tags) */
+:root {
+  --font-karla: 'Karla', sans-serif;
+  --font-fira: 'Fira Code', monospace;
+}
+
+html, body {
+    margin: 0;
+    background-color: #1C1C1C;
+    
+}
