@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './hero-section.component.scss'
 })
 export class HeroSectionComponent {
-// Das sind deine Grund-Elemente
   baseItems = [
     'Available for remote work', '•',
     'Frontend Developer', '•',
@@ -16,7 +15,6 @@ export class HeroSectionComponent {
     'Open to work', '•'
   ];
 
-  // Wir hängen das Array einfach 3x aneinander. 
-  // Das füllt jeden 4K-Monitor, ohne dein HTML zu zerstören!
+
   tickerItems = [...this.baseItems, ...this.baseItems, ...this.baseItems];
 }

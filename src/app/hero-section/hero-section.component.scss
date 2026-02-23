@@ -56,7 +56,7 @@ position: relative;
     border-color: #3DCFB6;
     color: #3DCFB6;
 
-    span {
+    >span {
       animation: simpleMarquee 1.5s linear infinite;
     }
   }
@@ -68,10 +68,6 @@ position: relative;
   50%  { transform: translateX(150%); } 
   100% { transform: translateX(0); }
 }
-
-
-
-
 
 .ticker-wrap {
   position: absolute; 
@@ -97,10 +93,10 @@ position: relative;
   display: flex;
   align-items: center;
   gap: 56px;           
-  padding-right: 56px; /* Wichtig für die -50% Mathematik */
+  padding-right: 56px; 
   flex-shrink: 0;      
   
-  span {
+  >span {
     font-family: var(--font-karla);
     font-size: 32px;
     font-weight: 400;
