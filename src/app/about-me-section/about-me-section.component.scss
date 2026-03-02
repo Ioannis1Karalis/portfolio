@@ -1,11 +1,13 @@
 .aboutMe {
   display: flex;
-  align-items: flex-start; 
-  justify-content: center; 
-  gap: 80px; 
-  margin: 80px auto; 
-  padding: 0 112px; 
+  align-items: flex-start;
+  justify-content: flex-start; 
+  gap: 100px; 
+  margin: 100px auto; 
+  padding: 0 112px;
+  width: 100%;
   max-width: 1440px; 
+  box-sizing: border-box;
 }
 
 .portraitPhoto {

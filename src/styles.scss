@@ -11,3 +11,25 @@ html, body {
     background-color: #1C1C1C;
     
 }
+
+* {
+  scrollbar-width: thin; 
+  scrollbar-color: #3DCFB6 transparent; 
+}
+
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3DCFB6; 
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: darken(#3DCFB6, 10%);
+}
