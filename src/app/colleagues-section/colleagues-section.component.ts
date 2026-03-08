@@ -10,11 +10,11 @@ import { CommonModule } from '@angular/common';
 })
 export class ColleaguesSectionComponent implements OnInit, OnDestroy {
   
-  testimonials = [
-    { text: "Working with Ioannis was a great experience. His deep understanding of front-end technologies and his problem-solving skills made our project a huge success. He is a highly reliable partner.", author: "Stefan K." },
-    { text: "Ioannis has a fantastic eye for detail. He effortlessly bridges the gap between design and technical implementation, always delivering clean, maintainable, and pixel-perfect results.", author: "Yagmur O." },
-    { text: "A highly proactive developer. Ioannis stays calm under pressure, communicates clearly, and always finds the most efficient way to tackle complex bugs. I'd gladly work with him again.", author: "Elpida K." },
-    { text: "I loved collaborating with Ioannis. He understands design principles perfectly and brings wireframes to life with elegant code. He makes sure the final product looks exactly as intended.", author: "Kiki K" }
+testimonials = [
+    { text: "Working with Ioannis is a great experience. He has a remarkable ability to grasp complex problems quickly and always finds practical solutions. He is an incredibly reliable and dedicated team player.", author: "Stefan K." },
+    { text: "Ioannis has a fantastic eye for detail and a strong commitment to quality. He approaches every task with great focus and precision, making sure that the final result always meets the highest standards.", author: "Yagmur O." },
+    { text: "A highly proactive colleague. Ioannis stays calm under pressure, communicates clearly, and always tackles challenges with a positive, results-oriented mindset. I'd gladly work with him on any project.", author: "Elpida K." },
+    { text: "I really loved collaborating with Ioannis. He is incredibly fast at learning new skills and always brings fresh, creative ideas to the table. His ambition and open-mindedness make him a great asset to any team.", author: "Kiki K." }
   ];
 
   displayTestimonials: any[] = [];
