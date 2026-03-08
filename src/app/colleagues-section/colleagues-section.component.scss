@@ -1,0 +1,144 @@
+.testimonials-section {
+  margin: 100px auto;
+  padding: 0 0;
+  width: 100%;
+  max-width: 1440px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  margin-top: 160px;
+}
+
+h2 {
+  color: #3DCFB6;
+  font-size: 48px;
+  font-family: var(--font-fira);
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.carousel-wrapper {
+  position: relative; 
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.static-quote-mark {
+  position: absolute;
+  top: -30px; 
+  left: -40px; 
+  z-index: 10; 
+  
+  >img {
+    width: 89px;
+    height: 64px;
+  }
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 40px; 
+}
+
+.testimonial-card {
+  min-width: 100%; 
+  box-sizing: border-box;
+  padding: 40px 48px;
+  border-radius: 20px;
+  border: 1px solid #3DCFB6; 
+  background-color: transparent; 
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
+
+  .feedback-text {
+    color: white;
+    font-size: 20px;
+    font-family: var(--font-karla);
+    line-height: 1.6;
+    margin: 0 0 40px 0;
+  }
+
+  .author-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .line {
+      flex: 1; 
+      height: 1px;
+      background-color: #3DCFB6;
+    }
+
+    .author-name {
+      color: white;
+      font-size: 16px;
+      font-family: var(--font-karla);
+      white-space: nowrap;
+    }
+  }
+}
+
+.testimonial-card.active {
+  opacity: 1; 
+  background-color: rgba(#3DCFB6, 0.30); 
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 16px;
+
+ .arrow-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    transition: all 0.3s ease; 
+
+    >svg {
+      stroke: white; 
+      transition: stroke 0.3s ease; 
+    }
+
+    &:hover svg {
+      stroke: #3DCFB6; 
+    }
+
+    &:first-child:hover {
+      transform: scale(1.2) translateX(-4px); 
+    }
+
+    &:last-child:hover {
+      transform: scale(1.2) translateX(4px); 
+    }
+  }
+
+  .dots {
+    display: flex;
+    gap: 12px;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: white;
+      opacity: 0.3;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.active {
+        opacity: 1;
+        background-color: #3DCFB6;
+      }
+    }
+  }
+}

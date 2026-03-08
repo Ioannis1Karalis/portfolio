@@ -1,0 +1,42 @@
+<section class="testimonials-section">
+  <h2>What my colleagues say about me</h2>
+
+  <div class="carousel-wrapper">
+    <div class="static-quote-mark">
+      <img src="../../assets/img/icons/other-icons/quotes.png" alt="">
+    </div>
+
+    <div class="carousel-track" 
+         [style.transition]="isTransitioning ? 'transform 0.5s ease-in-out' : 'none'"
+         [style.transform]="'translateX(calc(-' + (currentIndex * 100) + '% - ' + (currentIndex * 40) + 'px))'">
+      
+      <div class="testimonial-card" 
+           *ngFor="let t of displayTestimonials; let i = index" 
+           [class.active]="i === currentIndex">
+        <p class="feedback-text">{{ t.text }}</p>
+        <div class="author-info">
+          <div class="line"></div>
+          <span class="author-name">{{ t.author }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-controls">
+    <button class="arrow-btn" (click)="prev()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </button>
+    
+    <div class="dots">
+      <span class="dot" 
+            *ngFor="let t of testimonials; let i = index" 
+            [class.active]="isDotActive(i)" 
+            (click)="setIndex(i)">
+      </span>
+    </div>
+
+    <button class="arrow-btn" (click)="next()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</section>
