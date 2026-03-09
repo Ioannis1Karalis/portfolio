@@ -1,0 +1,325 @@
+/* =========================================
+   HAUPT-CONTAINER
+   ========================================= */
+.contact-section {
+  margin: 100px auto;
+  padding: 0 112px;
+  width: 100%;
+  max-width: 1440px;
+  box-sizing: border-box;
+  
+  display: flex;
+  justify-content: space-between;
+  gap: 80px; 
+}
+
+/* =========================================
+   LINKE SEITE (TEXTE)
+   ========================================= */
+.left-content {
+  flex: 1;
+  max-width: 500px; 
+
+  .subtitle {
+    color: #3DCFB6;
+    font-family: var(--font-karla);
+    font-size: 24px;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    color: #3DCFB6;
+    font-size: 64px;
+    font-family: var(--font-fira);
+    font-weight: bold;
+    line-height: 1.1; 
+    margin: 0 0 48px 0;
+  }
+
+  .text-block {
+    h3 {
+      color: #3DCFB6;
+      font-size: 24px;
+      font-family: var(--font-fira);
+      font-weight: bold;
+      margin: 0 0 16px 0;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 18px;
+      font-family: var(--font-karla);
+      line-height: 1.6;
+      margin: 0 0 24px 0;
+
+      a {
+        color: #3DCFB6;
+        text-decoration: none;
+        font-weight: bold;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+/* =========================================
+   RECHTE SEITE (FORMULAR)
+   ========================================= */
+.right-content {
+  flex: 1;
+  max-width: 600px; 
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+
+  /* =========================================
+     EINGABEFELDER & LINIEN
+     ========================================= */
+  .input-group {
+    position: relative; /* Erlaubt absolute Positionierung der Fehlermeldung */
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #3DCFB6;
+    
+    /* Padding unten reserviert dauerhaft Platz für die Fehlermeldung (Kein Layout Shift!) */
+    padding: 32px 0 40px 0; 
+
+    &:last-of-type {
+      border-bottom: 1px solid #3DCFB6; 
+    }
+
+    label {
+      color: #3DCFB6;
+      font-size: 24px;
+      font-family: var(--font-fira);
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    input, textarea {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 18px;
+      font-family: var(--font-karla);
+      outline: none; 
+      width: 100%;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5); 
+      }
+
+      /* =========================================================
+         WEBKIT AUTOFILL FIX: Verhindert gelb/blaue Browser-Hintergründe
+         ========================================================= */
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover, 
+      &:-webkit-autofill:focus, 
+      &:-webkit-autofill:active {
+        /* Der Trick: Blockiert die Browser-Farbe, Feld bleibt 100% transparent */
+        transition: background-color 5000s ease-in-out 0s;
+        
+        /* Sorgt dafür, dass die Schrift beim Autofill weiß bleibt */
+        -webkit-text-fill-color: white !important;
+        
+        /* Verhindert, dass der Browser die Schriftart beim Autofill ändert */
+        font-family: var(--font-karla);
+        font-size: 18px;
+      }
+    }
+
+    textarea {
+      resize: vertical; 
+      min-height: 24px;
+    }
+
+    /* Fehlermeldung innerhalb der Input-Group */
+    .error-msg {
+      position: absolute; 
+      bottom: 12px;       
+      left: 0;
+      color: #E07A5F;
+      font-size: 14px;
+      font-family: var(--font-karla);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+  }
+
+  /* =========================================
+     PRIVACY BEREICH & CHECKBOX
+     ========================================= */
+  .privacy-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 32px 0 48px 0;
+    padding-bottom: 24px; /* Reserviert Platz für die Checkbox-Fehlermeldung */
+
+    .privacy-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin: 0;
+
+      .custom-checkbox {
+        position: relative;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+
+        /* Versteckt die Standard-Checkbox */
+        input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+          position: absolute;
+        }
+
+        /* Die quadratische Box */
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 24px;
+          width: 24px;
+          background-color: transparent; 
+          border: 2px solid #3DCFB6; 
+          border-radius: 4px; 
+          transition: all 0.3s ease;
+          z-index: 2; 
+
+          /* DER RUNDE HOVER-HINTERGRUND */
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px; 
+            height: 40px;
+            border-radius: 50%; 
+            background-color: rgba(#3DCFB6, 0.1); 
+            transform: translate(-50%, -50%) scale(0); 
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            z-index: -1; 
+            opacity: 0;
+          }
+
+          /* DAS HÄKCHEN */
+          &::after {
+            content: "";
+            position: absolute;
+            display: none; 
+            left: 8px; 
+            top: 4px;
+            width: 5px; 
+            height: 10px; 
+            border: solid #3DCFB6; 
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+          }
+        }
+
+        /* HOVER-EFFEKT: Runder Hintergrund taucht auf */
+        &:hover .checkmark::before {
+          transform: translate(-50%, -50%) scale(1); 
+          opacity: 1; 
+        }
+
+        /* AKTIVIERTER ZUSTAND: Häkchen zeigen */
+        input:checked ~ .checkmark::after {
+          display: block;
+        }
+      }
+
+      .privacy-text {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 16px;
+        font-family: var(--font-karla);
+        line-height: 1.5;
+
+        a {
+          color: #3DCFB6;
+          text-decoration: none;
+          transition: opacity 0.3s ease;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+
+    /* Fehlermeldung für die Checkbox */
+    .error-msg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: #E07A5F;
+      font-size: 14px;
+      font-family: var(--font-karla);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+  }
+
+  /* =========================================
+     DER SENDEN-BUTTON & FEEDBACK
+     ========================================= */
+  .submit-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 16px; 
+
+    .submit-btn {
+      background-color: transparent;
+      color: white;
+      font-size: 18px;
+      font-family: var(--font-karla);
+      padding: 16px 48px;
+      border: 1px solid rgba(255, 255, 255, 0.5); 
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      /* Normaler Hover-Effekt (greift nur, wenn NICHT disabled) */
+      &:hover:not(:disabled) {
+        border-color: #3DCFB6;
+        color: #3DCFB6;
+        background-color: rgba(61, 207, 182, 0.05); 
+      }
+
+      /* DISABLED STATE: Button ist grau und nicht klickbar */
+      &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        border-color: rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.4);
+      }
+    }
+
+    .success-message {
+      color: #3DCFB6;
+      font-size: 18px;
+      font-family: var(--font-karla);
+      font-weight: bold;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+  }
+}
+
+/* =========================================
+   ANIMATIONEN
+   ========================================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
