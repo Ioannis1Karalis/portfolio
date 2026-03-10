@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
@@ -20,4 +20,16 @@ import { FooterComponent } from './footer/footer.component';
 })
 export class AppComponent {
   title = 'portfolio';
+
+  // Wir starten die Koordinaten weit außerhalb des Bildschirms, 
+  // damit das Licht erst auftaucht, wenn die Maus bewegt wird.
+  mouseX = -1000;
+  mouseY = -1000;
+
+  // Hört auf jede Mausbewegung auf der gesamten Webseite
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    this.mouseX = event.clientX;
+    this.mouseY = event.clientY;
+  }
 }
