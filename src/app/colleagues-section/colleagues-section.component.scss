@@ -12,7 +12,7 @@
 }
 
 h2 {
-  color: #3DCFB6;
+  color: #3dcfb6;
   font-size: 48px;
   font-family: var(--font-fira);
   font-weight: bold;
@@ -21,7 +21,7 @@ h2 {
 }
 
 .carousel-wrapper {
-  position: relative; 
+  position: relative;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -29,11 +29,11 @@ h2 {
 
 .static-quote-mark {
   position: absolute;
-  top: -30px; 
-  left: -40px; 
-  z-index: 10; 
-  
-  >img {
+  top: -30px;
+  left: -40px;
+  z-index: 10;
+
+  > img {
     width: 89px;
     height: 64px;
   }
@@ -42,16 +42,16 @@ h2 {
 .carousel-track {
   display: flex;
   align-items: center;
-  gap: 40px; 
+  gap: 40px;
 }
 
 .testimonial-card {
-  min-width: 100%; 
+  min-width: 100%;
   box-sizing: border-box;
   padding: 40px 48px;
   border-radius: 20px;
-  border: 1px solid #3DCFB6; 
-  background-color: transparent; 
+  border: 1px solid #3dcfb6;
+  background-color: transparent;
   opacity: 0.5;
   transition: all 0.5s ease-in-out;
 
@@ -69,9 +69,9 @@ h2 {
     gap: 16px;
 
     .line {
-      flex: 1; 
+      flex: 1;
       height: 1px;
-      background-color: #3DCFB6;
+      background-color: #3dcfb6;
     }
 
     .author-name {
@@ -84,8 +84,8 @@ h2 {
 }
 
 .testimonial-card.active {
-  opacity: 1; 
-  background-color: rgba(#3DCFB6, 0.30); 
+  opacity: 1;
+  background-color: rgba(#3dcfb6, 0.3);
 }
 
 .carousel-controls {
@@ -94,7 +94,7 @@ h2 {
   gap: 32px;
   margin-top: 16px;
 
- .arrow-btn {
+  .arrow-btn {
     background: transparent;
     border: none;
     cursor: pointer;
@@ -102,23 +102,23 @@ h2 {
     align-items: center;
     justify-content: center;
     padding: 8px;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 
-    >svg {
-      stroke: white; 
-      transition: stroke 0.3s ease; 
+    > svg {
+      stroke: white;
+      transition: stroke 0.3s ease;
     }
 
     &:hover svg {
-      stroke: #3DCFB6; 
+      stroke: #3dcfb6;
     }
 
     &:first-child:hover {
-      transform: scale(1.2) translateX(-4px); 
+      transform: scale(1.2) translateX(-4px);
     }
 
     &:last-child:hover {
-      transform: scale(1.2) translateX(4px); 
+      transform: scale(1.2) translateX(4px);
     }
   }
 
@@ -137,7 +137,7 @@ h2 {
 
       &.active {
         opacity: 1;
-        background-color: #3DCFB6;
+        background-color: #3dcfb6;
       }
     }
   }

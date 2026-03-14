@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-colleagues-section',
   standalone: true,
@@ -14,7 +15,8 @@ testimonials = [
     { text: "Working with Ioannis is a great experience. He has a remarkable ability to grasp complex problems quickly and always finds practical solutions. He is an incredibly reliable and dedicated team player.", author: "Stefan K." },
     { text: "Ioannis has a fantastic eye for detail and a strong commitment to quality. He approaches every task with great focus and precision, making sure that the final result always meets the highest standards.", author: "Yagmur O." },
     { text: "A highly proactive colleague. Ioannis stays calm under pressure, communicates clearly, and always tackles challenges with a positive, results-oriented mindset. I'd gladly work with him on any project.", author: "Elpida K." },
-    { text: "I really loved collaborating with Ioannis. He is incredibly fast at learning new skills and always brings fresh, creative ideas to the table. His ambition and open-mindedness make him a great asset to any team.", author: "Kiki K." }
+    { text: "I really loved collaborating with Ioannis. He is incredibly fast at learning new skills and always brings fresh, creative ideas to the table. His ambition and open-mindedness make him a great asset to any team.", author: "Kiki K." },
+    { text: "Ioannis brings fantastic energy and technical expertise to the team. He consistently writes clean, efficient code and tackles challenges with a great mindset. An inspiring and highly reliable colleague.", author: "Evangelia K." }  
   ];
 
   displayTestimonials: any[] = [];
@@ -40,7 +42,7 @@ testimonials = [
   startAutoPlay() {
     this.autoPlayInterval = setInterval(() => {
       this.next();
-    }, 5000);
+    }, 7000);
   }
 
   stopAutoPlay() {

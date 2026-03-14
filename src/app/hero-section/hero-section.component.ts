@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-// WICHTIG: Stelle sicher, dass der Pfad zu deiner Navbar-Component stimmt!
 import { NavbarComponent } from '../navbar/navbar.component'; 
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [NavbarComponent], // Hier muss die Navbar rein!
+  imports: [NavbarComponent], 
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.scss'
 })

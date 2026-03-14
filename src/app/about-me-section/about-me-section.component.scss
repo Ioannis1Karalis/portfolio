@@ -1,12 +1,12 @@
 .aboutMe {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start; 
-  gap: 100px; 
-  margin: 100px auto; 
+  justify-content: flex-start;
+  gap: 100px;
+  margin: 100px auto;
   padding: 0 112px;
   width: 100%;
-  max-width: 1440px; 
+  max-width: 1440px;
   box-sizing: border-box;
 }
 
@@ -36,15 +36,15 @@
     background: repeating-linear-gradient(
       45deg,
       transparent,
-      transparent 20px,
-      #3DCFB6 20px,
-      #3DCFB6 21px
+      transparent 18px,
+      #3dcfb6 20px,
+      #3dcfb6 21px
     );
   }
 }
 
 .myInformations {
-  margin-top: 80px;   
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -52,7 +52,7 @@
 }
 
 .subtitle {
-  color: #3DCFB6;
+  color: #3dcfb6;
   font-family: var(--font-karla);
   font-weight: 400;
   font-size: 24px;
@@ -60,19 +60,19 @@
 }
 
 .about-box {
-  border: 1px solid #3DCFB6;
+  border: 1px solid #3dcfb6;
   border-radius: 30px;
   padding: 32px;
-  background-color: rgba(#3DCFB6, 0.1);  
-  
+  background-color: rgba(#3dcfb6, 0.1);
+
   h2 {
-    color: #3DCFB6;
+    color: #3dcfb6;
     font-size: 64px;
     font-family: var(--font-fira);
     font-weight: 700;
     margin: 0 0 24px 0;
   }
-  
+
   .intro-text {
     color: white;
     font-size: 18px;
@@ -98,12 +98,12 @@
     width: 28px;
     height: 28px;
     object-fit: contain;
-    flex-shrink: 0; 
+    flex-shrink: 0;
     margin-top: 4px;
   }
 
   p {
-    color: rgba(#FFFFFF, 0.8);
+    color: rgba(#ffffff, 0.8);
     font-size: 18px;
     font-weight: 400;
     line-height: 1.6;
