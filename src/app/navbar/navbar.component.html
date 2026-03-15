@@ -1,14 +1,19 @@
 <nav class="navbar">
-  
   <div class="nav-left">
     <div class="lang-switch">
-      <span class="lang-btn" 
-            [class.active]="currentLang === 'EN'" 
-            (click)="switchLang('EN')">EN</span>
-            
-      <span class="lang-btn" 
-            [class.active]="currentLang === 'DE'" 
-            (click)="switchLang('DE')">DE</span>
+      <span
+        class="lang-btn"
+        [class.active]="currentLang === 'EN'"
+        (click)="switchLang('EN')"
+        >EN</span
+      >
+
+      <span
+        class="lang-btn"
+        [class.active]="currentLang === 'DE'"
+        (click)="switchLang('DE')"
+        >DE</span
+      >
     </div>
 
     <div class="nav-links">
@@ -19,7 +24,6 @@
   </div>
 
   <div class="nav-right">
-    <img src="../../assets/img/logoo.png" alt="Ioannis Logo" class="logo">
+    <img src="../../assets/img/logo.png" alt="Ioannis Logo" class="logo" />
   </div>
-  
 </nav>
