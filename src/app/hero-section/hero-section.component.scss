@@ -12,35 +12,12 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 70px;
+        height: 90px;
         background: linear-gradient(to bottom, rgba(28, 28, 28, 0.95) 0%, rgba(28, 28, 28, 0) 100%);
         pointer-events: none;
         z-index: 1; 
     }
-
-//     .hero {
-//   width: 100%;
-//   height: 100vh;
-//   min-height: 100vh;
-//   position: relative;
-//   overflow: hidden;
-
-//   /* 1. DER TIEFE HINTERGRUND */
-//   background-color: #141414; /* deep background */
-
-//   /* 2. DER WEICHE CYAN-VERLAUF (ZENTRIERT RECHTS) */
-//   background-image: radial-gradient(
-//     circle at 110% 50%, /* Positioniert das Licht rechts-mittig, leicht außerhalb */
-//     rgba(61, 207, 182, 0.35) 0%, /* Sehr weiches Cyan, 35% Deckkraft */
-//     rgba(61, 207, 182, 0) 60% /* Fadet weich nach außen aus */
-//   );
-// }
-
 }
-
-
-
-
 
 .title{
     display: flex;

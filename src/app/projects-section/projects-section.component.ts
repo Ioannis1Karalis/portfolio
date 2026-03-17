@@ -34,7 +34,7 @@ projects = [
       id: '03',
       title: 'Pokedex',
       description: 'An interactive digital library for Pokémon. Fetch data via REST-API to search for species and explore their detailed stats and abilities.',
-      skills: ['JavaScript', 'HTML', 'CSS', 'REST-API'], // REST-API hinzugefügt, da es oben im HTML stand
+      skills: ['JavaScript', 'HTML', 'CSS', 'REST-API'], 
       githubUrl: 'https://github.com/...',
       liveUrl: 'https://deinedomain.com/pokedex',
       image: '../../assets/img/projects/pokedex.png'

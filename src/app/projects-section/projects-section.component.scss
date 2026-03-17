@@ -311,23 +311,33 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
 
-  .next-btn {
+.next-btn {
     position: absolute;
     bottom: -16px;
     right: 0;
     background: transparent;
     border: none;
-    color: #3dcfb6;
+    color: #3dcfb6; 
     font-size: 18px;
     font-family: var(--font-karla);
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: opacity 0.3s ease;
+    transition: color 0.3s ease;
+
+    .next-arrow {
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease-in-out;
+    }
 
     &:hover {
-      opacity: 0.7;
+      color: #ffffff; 
+      
+      .next-arrow {
+        transform: translateX(4px);
+      }
     }
   }
 }
