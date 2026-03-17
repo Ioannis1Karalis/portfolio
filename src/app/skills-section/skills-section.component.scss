@@ -3,11 +3,15 @@
   align-items: center; 
   justify-content: flex-start; 
   gap: 100px; 
-  margin: 100px auto; 
   padding: 0 112px;
   width: 100%;
   max-width: 1440px; 
   box-sizing: border-box;
+  background-image: radial-gradient(
+    circle at 0% 50%, 
+    rgba(8, 70, 59, 0.4) 0%,   
+    rgba(28, 28, 28, 0) 27%    
+  );
 }
 
 .skills-info {
@@ -23,7 +27,6 @@
   margin-bottom: 20px;
 }
 
-/* Wiederverwendeter Box-Style */
 .skills-box {
   border: 1px solid #3DCFB6;
   border-radius: 32px;
