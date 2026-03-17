@@ -1,34 +1,60 @@
 <div class="hero">
 
-<app-navbar></app-navbar>
+  <app-navbar></app-navbar>
 
-<div class="title">
-    <span>Frontend Developer</span>
-    <h1>Ioannis Karalis</h1>
+  <div class="title">
+      <span>Frontend Developer</span>
+      <h1>Ioannis Karalis</h1>
 
-    <div class="buttons">
-        <button class="marquee-btn"><span>Check my work</span></button>
-        <button class="marquee-btn"><span>Contact me</span></button>
-    </div>
-
-</div>
-
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    
-    <div class="ticker-content">
-      @for (item of tickerItems; track $index) {
-        <span>{{ item }}</span>
-      }
-    </div>
-
-    <div class="ticker-content" aria-hidden="true">
-      @for (item of tickerItems; track $index) {
-        <span>{{ item }}</span>
-      }
-    </div>
-
+      <div class="buttons">
+          <button class="marquee-btn"><span>Check my work</span></button>
+          <button class="marquee-btn"><span>Contact me</span></button>
+      </div>
   </div>
-</div>
+
+  <div class="scroll-indicator-left">
+    <div class="circle-arrow">
+      <img src="../../assets/img/icons/other-icons/arrow_down.png" alt="Scroll down">
+    </div>
+    <div class="line-green"></div>
+  </div>
+
+  <div class="social-indicator-right">
+  
+    <a href="mailto:i.karalis@outlook.de" class="email-link">i.karalis&#64;outlook.de</a>
+
+    <div class="social-icons-group">
+    
+      <a href="https://github.com/DeinGithub" target="_blank" class="social-icon">
+        <img src="../../assets/img/icons/contact-icons/github.png" class="img-default" alt="GitHub">
+        <img src="../../assets/img/icons/contact-icons/github_hover.png" class="img-hover" alt="GitHub">
+      </a>
+
+      <a href="https://linkedin.com/in/DeinLinkedIn" target="_blank" class="social-icon">
+        <img src="../../assets/img/icons/contact-icons/linkedin.png" class="img-default" alt="LinkedIn">
+        <img src="../../assets/img/icons/contact-icons/linkedin_hover.png" class="img-hover" alt="LinkedIn">
+      </a>
+
+    </div> <div class="line-white"></div>
+    
+  </div>
+
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      
+      <div class="ticker-content">
+        @for (item of tickerItems; track $index) {
+          <span>{{ item }}</span>
+        }
+      </div>
+
+      <div class="ticker-content" aria-hidden="true">
+        @for (item of tickerItems; track $index) {
+          <span>{{ item }}</span>
+        }
+      </div>
+
+    </div>
+  </div>
 
 </div>
