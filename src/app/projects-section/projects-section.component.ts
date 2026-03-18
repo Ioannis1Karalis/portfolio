@@ -17,8 +17,8 @@ projects = [
       title: 'Join',
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
       skills: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
-      githubUrl: 'https://github.com/...',
-      liveUrl: 'https://deinedomain.com/join',
+      githubUrl: 'https://github.com/Ioannis1Karalis/Join.git',
+      liveUrl: 'https......',
       image: '../../assets/img/projects/join.png'
     },
     {
@@ -26,7 +26,7 @@ projects = [
       title: 'Sharkie',
       description: 'A jump and run game based on object-oriented programming. Help Sharkie to find the magic coins and fight the killer whale.',
       skills: ['JavaScript', 'HTML', 'CSS'],
-      githubUrl: 'https://github.com/...',
+      githubUrl: 'https://github.com/Ioannis1Karalis/Sharkie.git',
       liveUrl: 'https://deinedomain.com/sharkie',
       image: '../../assets/img/projects/sharkie.png'
     },
@@ -35,7 +35,7 @@ projects = [
       title: 'Pokedex',
       description: 'An interactive digital library for Pokémon. Fetch data via REST-API to search for species and explore their detailed stats and abilities.',
       skills: ['JavaScript', 'HTML', 'CSS', 'REST-API'], 
-      githubUrl: 'https://github.com/...',
+      githubUrl: 'https://github.com/Ioannis1Karalis/Pokedex.git',
       liveUrl: 'https://deinedomain.com/pokedex',
       image: '../../assets/img/projects/pokedex.png'
     },
@@ -44,7 +44,7 @@ projects = [
       title: 'Ring of Fire',
       description: 'A real-time multiplayer version of the classic party game. Join your friends online, draw cards, and complete the fun challenges together.',
       skills: ['Angular','TypeScript', 'HTML', 'CSS', 'Firebase'],
-      githubUrl: 'https://github.com/...',
+      githubUrl: 'https://github.com/Ioannis1Karalis/Ring-of-Fire.git',
       liveUrl: 'https://deinedomain.com/ringoffire',
       image: '../../assets/img/projects/ringoffire.png'
     },
@@ -53,7 +53,7 @@ projects = [
       title: 'Bestell App',
       description: 'A responsive web application for food delivery. Browse the menu, add your favorite meals to the cart, and view the calculated total price.',
       skills: ['JavaScript', 'HTML', 'CSS'],
-      githubUrl: 'https://github.com/...',
+      githubUrl: 'https://github.com/Ioannis1Karalis/BestellApp.git',
       liveUrl: 'https://deinedomain.com/bestellapp',
       image: '../../assets/img/projects/bestellapp.png'
     }
