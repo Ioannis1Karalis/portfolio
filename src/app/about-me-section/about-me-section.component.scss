@@ -1,16 +1,16 @@
-.aboutMe {
+.about-me {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 100px;
   margin: 100px auto;
-  padding: 0 112px;
+  padding: 50px 112px;
   width: 100%;
   max-width: 1440px;
   box-sizing: border-box;
 }
 
-.portraitPhoto {
+.portrait-photo {
   position: relative;
   width: 100%;
   max-width: 450px;

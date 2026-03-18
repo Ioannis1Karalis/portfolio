@@ -1,29 +1,19 @@
 <nav class="navbar">
   <div class="nav-left">
     <div class="lang-switch">
-      <span
-        class="lang-btn"
-        [class.active]="currentLang === 'EN'"
-        (click)="switchLang('EN')"
-        >EN</span
-      >
+      <span class="lang-btn" [class.active]="currentLang === 'EN'" (click)="switchLang('EN')">EN</span>
 
-      <span
-        class="lang-btn"
-        [class.active]="currentLang === 'DE'"
-        (click)="switchLang('DE')"
-        >DE</span
-      >
+      <span class="lang-btn" [class.active]="currentLang === 'DE'" (click)="switchLang('DE')">DE</span>
     </div>
 
-    <div class="nav-links">
-      <a href="#about" class="nav-link">About me</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#projects" class="nav-link">Projects</a>
+<div class="nav-links">
+      <a (click)="scrollTo('about-me')" class="nav-link" style="cursor: pointer;">About me</a>
+      <a (click)="scrollTo('skills')" class="nav-link" style="cursor: pointer;">Skills</a>
+      <a (click)="scrollTo('projects')" class="nav-link" style="cursor: pointer;">Projects</a>
     </div>
   </div>
 
   <div class="nav-right">
-    <img src="../../assets/img/logo3.png" alt="Ioannis Logo" class="logo" />
+    <img src="../../assets/img/logo.png" alt="Ioannis Logo" class="logo" />
   </div>
 </nav>

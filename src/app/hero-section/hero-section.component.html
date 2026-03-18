@@ -7,8 +7,13 @@
       <h1>Ioannis Karalis</h1>
 
       <div class="buttons">
-          <button class="marquee-btn"><span>Check my work</span></button>
-          <button class="marquee-btn"><span>Contact me</span></button>
+          <button class="marquee-btn" (click)="scrollTo('projects')">
+            <span>Check my work</span>
+          </button>
+          
+          <button class="marquee-btn" (click)="scrollTo('contact')">
+            <span>Contact me</span>
+          </button>
       </div>
   </div>
 

@@ -17,6 +17,12 @@ export class HeroSectionComponent {
     'Open to work', '•'
   ];
 
-
   tickerItems = [...this.baseItems, ...this.baseItems, ...this.baseItems];
+
+  scrollTo(elementId: string): void {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
