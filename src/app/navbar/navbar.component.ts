@@ -26,23 +26,22 @@ export class NavbarComponent {
 
   scrollTo(elementId: string): void {
     if (this.router.url !== '/') {
-      
-      this.router.navigate(['/']).then(() => {
-        setTimeout(() => {
-          const element = document.getElementById(elementId);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 100);
-      });
-      
+      this.navigateAndScroll(elementId);
     } else {
-      
-      const element = document.getElementById(elementId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-      
+      this.executeScroll(elementId);
+    }
+  }
+
+  private navigateAndScroll(elementId: string): void {
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => this.executeScroll(elementId), 100);
+    });
+  }
+
+  private executeScroll(elementId: string): void {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
