@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
 import { MainPageComponent } from './main-page/main-page.component';
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 export const routes: Routes = [
-  // Wenn der Link leer ist (Startseite), lade das ganze Portfolio
   { path: '', component: MainPageComponent }, 
   
-  // Wenn der Link /legal-notice heißt, lade nur das Impressum
-  { path: 'legal-notice', component: LegalNoticeComponent } 
+  { path: 'legal-notice', component: LegalNoticeComponent },
+
+  { path: 'privacy-policy', component: PrivacyPolicyComponent } 
 ];
