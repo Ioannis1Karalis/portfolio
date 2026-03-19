@@ -1,19 +1,40 @@
 <nav class="navbar">
-  <div class="nav-left">
+  
+  <div class="nav-left desktop-only">
     <div class="lang-switch">
       <span class="lang-btn" [class.active]="currentLang === 'EN'" (click)="switchLang('EN')">EN</span>
-
       <span class="lang-btn" [class.active]="currentLang === 'DE'" (click)="switchLang('DE')">DE</span>
     </div>
 
-<div class="nav-links">
-      <a (click)="scrollTo('about-me')" class="nav-link" style="cursor: pointer;">About me</a>
-      <a (click)="scrollTo('skills')" class="nav-link" style="cursor: pointer;">Skills</a>
-      <a (click)="scrollTo('projects')" class="nav-link" style="cursor: pointer;">Projects</a>
+    <div class="nav-links">
+      <a (click)="scrollTo('about-me')" class="nav-link">About me</a>
+      <a (click)="scrollTo('skills')" class="nav-link">Skills</a>
+      <a (click)="scrollTo('projects')" class="nav-link">Projects</a>
     </div>
   </div>
 
   <div class="nav-right">
     <img src="../../assets/img/logo.png" alt="Ioannis Logo" class="logo" />
   </div>
+
+  <div class="burger-btn mobile-only" (click)="toggleMenu()" [class.open]="isMenuOpen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="mobile-menu" [class.show]="isMenuOpen">
+    <a (click)="scrollTo('about-me')" class="mobile-link">About me</a>
+    <a (click)="scrollTo('skills')" class="mobile-link">Skills</a>
+    <a (click)="scrollTo('projects')" class="mobile-link">Projects</a>
+    
+    <div class="lang-switch-mobile">
+      <span class="lang-btn" [class.active]="currentLang === 'EN'" (click)="switchLang('EN')">EN</span>
+      <span class="lang-btn" [class.active]="currentLang === 'DE'" (click)="switchLang('DE')">DE</span>
+    </div>
+  </div>
+
+  <div class="menu-overlay" [class.show]="isMenuOpen" (click)="closeMenu()"></div>
+
 </nav>
+

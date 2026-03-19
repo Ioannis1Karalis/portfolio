@@ -12,17 +12,24 @@ import { Router } from '@angular/router';
 
 export class NavbarComponent {
 
-    // Standardmäßig ist Englisch ausgewählt
   currentLang: 'EN' | 'DE' = 'EN';
-
-  // Wechselt die Sprache, wenn man auf den Button klickt
-  switchLang(lang: 'EN' | 'DE') {
-    this.currentLang = lang;
-    // Hier kannst du später eine echte Übersetzungs-Logik einbauen
-    console.log('Sprache gewechselt zu:', this.currentLang);
-  }
+  isMenuOpen: boolean = false;
 
   constructor(private router: Router) {}
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+    this.updateBodyScroll();
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+    this.updateBodyScroll();
+  }
+
+  switchLang(lang: 'EN' | 'DE'): void {
+    this.currentLang = lang;
+  }
 
   scrollTo(elementId: string): void {
     if (this.router.url !== '/') {
@@ -39,9 +46,18 @@ export class NavbarComponent {
   }
 
   private executeScroll(elementId: string): void {
+    this.closeMenu();
     const element = document.getElementById(elementId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  private updateBodyScroll(): void {
+    if (this.isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
   }
 
