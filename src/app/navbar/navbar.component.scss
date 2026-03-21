@@ -183,11 +183,10 @@
     background-image: radial-gradient(circle at top right,rgba(8, 70, 59, 0.6) 20%,#1C1C1C 66%);
     border: 1px solid #3DCFB6;
     border-radius: 32px;
-    padding: 32px 48px;
+    padding: 30px 74px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 32px;
+    gap: 24px;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-20px);
@@ -203,7 +202,8 @@
     .mobile-link {
       color: white;
       font-family: var(--font-fira);
-      font-size: 20px;
+      font-size: 18px;
+      font-weight: 400;
       text-decoration: none;
       cursor: pointer;
       &:hover {
@@ -251,6 +251,6 @@
   }
   .mobile-menu {
     right: 16px;
-    padding: 24px 32px;
+    padding: 30px 50px;
   }
 }
