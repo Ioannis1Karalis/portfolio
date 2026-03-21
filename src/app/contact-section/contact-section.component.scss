@@ -4,7 +4,6 @@
   width: 100%;
   max-width: 1440px;
   box-sizing: border-box;
-
   display: flex;
   justify-content: space-between;
   gap: 80px;
@@ -70,7 +69,7 @@
     display: flex;
     flex-direction: column;
     border-top: 1px solid #3dcfb6;
-    padding: 32px 0 40px 0;
+    padding: 32px 0 48px 0;
 
     &:last-of-type {
       border-bottom: 1px solid #3dcfb6;
@@ -112,7 +111,7 @@
 
     textarea {
       resize: vertical;
-      min-height: 24px;
+      min-height: 66px;
     }
 
     .error-msg {
@@ -289,5 +288,166 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   MEDIA QUERIES - RESPONSIVE CONTACT
+========================================== */
+
+/* Große Tablets / Kleine Desktops (Einheitliches Layout) */
+@media (max-width: 1200px) {
+  .contact-section {
+    flex-direction: column; /* Stapelt Text und Formular untereinander */
+    padding: 50px 30px;
+    margin: 80px auto;
+    gap: 48px;
+    max-width: 660px; /* Passt sich exakt an deine Skills- und Projects-Breite an */
+  }
+
+  .left-content,
+  .right-content {
+    max-width: 100%; /* Erlaubt beiden Blöcken die volle Breite zu nutzen */
+  }
+}
+
+/* Tablets (Portrait) */
+@media (max-width: 850px) {
+  .contact-section {
+    padding: 50px 24px;
+  }
+
+  .left-content h2 {
+    font-size: 56px;
+    margin-bottom: 32px;
+  }
+}
+
+/* Handys (Screenshot Style) */
+@media (max-width: 600px) {
+  .contact-section {
+    gap: 40px;
+  }
+
+  .left-content {
+    h2 {
+      font-size: 48px;
+      margin-bottom: 24px;
+    }
+
+    .text-block {
+      h3 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .contact-form {
+    .input-group {
+      padding: 24px 0 32px 0; /* Etwas kompaktere Formular-Abstände */
+
+      label {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      input,
+      textarea {
+        font-size: 16px;
+        padding-bottom: 10px;
+        
+        /* Sorgt dafür, dass Placeholder auf Mobile nicht abgeschnitten werden */
+        &::placeholder {
+          font-size: 16px; 
+        }
+      }
+    }
+    
+    .privacy-wrapper {
+      margin: 24px 0 40px 0;
+    }
+  }
+}
+
+/* Sehr kleine Handys (z.B. 320px/375px Displays) */
+@media (max-width: 450px) {
+  .contact-section {
+    padding: 40px 16px; /* Rand minimal machen für maximalen Platz */
+  }
+
+  .left-content {
+    .subtitle {
+      font-size: 20px;
+    }
+
+    h2 {
+      font-size: 40px; /* Let's work together wird kompakt */
+    }
+
+    .text-block p {
+      font-size: 14px; /* Fließtext anpassen */
+    }
+  }
+
+  .contact-form {
+    .input-group {
+      padding: 20px 0 28px 0;
+
+      label {
+        font-size: 18px;
+      }
+
+      .error-msg {
+        font-size: 14px;
+      }
+      
+      input,
+      textarea {
+        font-size: 15px;
+        
+        &::placeholder {
+          font-size: 14px; 
+        }
+      }
+    }
+
+    .privacy-wrapper {
+      .privacy-group {
+        gap: 12px; /* Checkbox und Text näher zusammen */
+
+        .custom-checkbox {
+          /* Checkbox minimal verkleinern, damit sie nicht zu wuchtig wirkt */
+          width: 20px;
+          height: 20px;
+          
+          .checkmark {
+            width: 20px;
+            height: 20px;
+            
+            &::after {
+              left: 6px;
+              top: 2px;
+            }
+          }
+        }
+
+        .privacy-text {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .submit-group {
+      .submit-btn {
+        font-size: 16px;
+        padding: 12px 32px; /* Button etwas anpassen */
+        width: 100%; /* Auf winzigen Screens sieht ein voller Button oft besser aus */
+        max-width: 146px; /* Aber nicht zu breit werden lassen */
+      }
+    }
   }
 }
