@@ -10,18 +10,22 @@
 .footer-content {
   width: 100%; 
   display: flex;
+  flex-wrap: wrap; 
   justify-content: space-between;
-  align-items: center; 
+  align-items: flex-start; 
 }
 
 .left-side {
+  order: 1; 
   display: flex;
   flex-direction: column;
   gap: 8px;
 
   .logo {
-    height: 40px;
-    margin-bottom: 10px; 
+    height: 48px;
+    object-fit: contain;
+    object-position: left;
+    margin-bottom: 12px; 
   }
 
   .info-text {
@@ -31,19 +35,13 @@
   }
 }
 
-.center-side {
-  .copyright {
-    color: #3DCFB6;
-    font-size: 20px;
-    font-family: var(--font-fira);
-  }
-}
-
 .right-side {
+  order: 2;
   display: flex;
   flex-direction: column;
-  gap: 8px; 
+  gap: 12px; 
   align-items: flex-start;
+  margin-top: 24px; 
 
   .footer-link {
     position: relative;
@@ -57,7 +55,7 @@
     &::before {
       content: "";
       position: absolute;
-      left: -10px; 
+      left: -16px; 
       top: 50%;
       transform: translateY(-50%); 
       width: 6px;
@@ -75,5 +73,81 @@
         opacity: 1;
       }
     }
+  }
+}
+
+.center-side {
+  order: 3; 
+  width: 100%; 
+  display: flex;
+  justify-content: center; 
+  margin-top: 64px; 
+
+  .copyright {
+    color: #3DCFB6;
+    font-size: 20px;
+    font-family: var(--font-fira);
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer-section {
+    padding: 0 30px;
+    padding-bottom: 50px;
+    max-width: 660px; 
+  }
+}
+
+@media (max-width: 850px) {
+  .footer-section {
+    padding: 0 24px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    gap: 30px;
+  }
+
+  .right-side {
+    margin-top: 0;
+
+    .footer-link::before {
+      display: none; 
+    }
+  }
+
+  .center-side {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 450px) {
+  .footer-section {
+    padding: 0 16px;
+    padding-bottom: 32px;
+  }
+
+  .left-side {
+    .logo {
+      height: 40px; 
+    }
+    
+    .info-text {
+      font-size: 16px;
+    }
+  }
+
+  .right-side {
+    gap: 16px; 
+    
+    .footer-link {
+      font-size: 16px;
+    }
+  }
+
+  .center-side .copyright {
+    font-size: 18px; 
   }
 }

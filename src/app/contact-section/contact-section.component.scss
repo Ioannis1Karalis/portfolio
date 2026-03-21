@@ -291,27 +291,21 @@
   }
 }
 
-/* ==========================================
-   MEDIA QUERIES - RESPONSIVE CONTACT
-========================================== */
-
-/* Große Tablets / Kleine Desktops (Einheitliches Layout) */
 @media (max-width: 1200px) {
   .contact-section {
-    flex-direction: column; /* Stapelt Text und Formular untereinander */
+    flex-direction: column; 
     padding: 50px 30px;
     margin: 80px auto;
     gap: 48px;
-    max-width: 660px; /* Passt sich exakt an deine Skills- und Projects-Breite an */
+    max-width: 660px; 
   }
 
   .left-content,
   .right-content {
-    max-width: 100%; /* Erlaubt beiden Blöcken die volle Breite zu nutzen */
+    max-width: 100%; 
   }
 }
 
-/* Tablets (Portrait) */
 @media (max-width: 850px) {
   .contact-section {
     padding: 50px 24px;
@@ -323,7 +317,6 @@
   }
 }
 
-/* Handys (Screenshot Style) */
 @media (max-width: 600px) {
   .contact-section {
     gap: 40px;
@@ -348,7 +341,7 @@
 
   .contact-form {
     .input-group {
-      padding: 24px 0 32px 0; /* Etwas kompaktere Formular-Abstände */
+      padding: 24px 0 32px 0;
 
       label {
         font-size: 20px;
@@ -359,8 +352,7 @@
       textarea {
         font-size: 16px;
         padding-bottom: 10px;
-        
-        /* Sorgt dafür, dass Placeholder auf Mobile nicht abgeschnitten werden */
+  
         &::placeholder {
           font-size: 16px; 
         }
@@ -373,10 +365,9 @@
   }
 }
 
-/* Sehr kleine Handys (z.B. 320px/375px Displays) */
 @media (max-width: 450px) {
   .contact-section {
-    padding: 40px 16px; /* Rand minimal machen für maximalen Platz */
+    padding: 0px 16px; 
   }
 
   .left-content {
@@ -385,11 +376,11 @@
     }
 
     h2 {
-      font-size: 40px; /* Let's work together wird kompakt */
+      font-size: 40px;
     }
 
     .text-block p {
-      font-size: 14px; /* Fließtext anpassen */
+      font-size: 14px; 
     }
   }
 
@@ -417,10 +408,9 @@
 
     .privacy-wrapper {
       .privacy-group {
-        gap: 12px; /* Checkbox und Text näher zusammen */
+        gap: 12px; 
 
         .custom-checkbox {
-          /* Checkbox minimal verkleinern, damit sie nicht zu wuchtig wirkt */
           width: 20px;
           height: 20px;
           
@@ -444,9 +434,9 @@
     .submit-group {
       .submit-btn {
         font-size: 16px;
-        padding: 12px 32px; /* Button etwas anpassen */
-        width: 100%; /* Auf winzigen Screens sieht ein voller Button oft besser aus */
-        max-width: 146px; /* Aber nicht zu breit werden lassen */
+        padding: 12px 32px; 
+        width: 100%;
+        max-width: 146px;
       }
     }
   }
