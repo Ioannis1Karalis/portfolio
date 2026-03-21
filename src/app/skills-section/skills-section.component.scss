@@ -74,8 +74,8 @@
 
   .btn-talk {
     background: transparent;
-    color: white;
-    border: 1px solid white;
+    color: #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 30px;
     padding: 12px 32px;
     font-size: 18px;
@@ -83,15 +83,34 @@
     font-family: var(--font-karla);
     cursor: pointer;
     transition: all 0.3s ease;
+    overflow: hidden;
+    display: inline-flex;
 
     &:hover {
-      background-color: #3DCFB6;
-      border-color: #3DCFB6;
-      color: #000;
+      border-color: #3dcfb6;
+      color: #3dcfb6;
+
+      >span {
+        animation: simpleMarquee 1.7s linear infinite;
+      }
+    }
+  }
+
+  @keyframes simpleMarquee {
+    0% {
+      transform: translateX(0);
+    }
+    49% {
+      transform: translateX(-150%);
+    }
+    50% {
+      transform: translateX(150%);
+    }
+    100% {
+      transform: translateX(0);
     }
   }
 }
-
 
 .skills-grid {
   flex: 1.5; 
