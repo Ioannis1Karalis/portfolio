@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router'; 
 import { NavbarComponent } from '../navbar/navbar.component'; 
 import { FooterComponent } from '../footer/footer.component'; 
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-legal-notice',
@@ -11,7 +12,7 @@ import { FooterComponent } from '../footer/footer.component';
   styleUrl: './legal-notice.component.scss'
 })
 export class LegalNoticeComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, public langService: LanguageService) {}
 
   goHome(): void {
     this.router.navigate(['/']);

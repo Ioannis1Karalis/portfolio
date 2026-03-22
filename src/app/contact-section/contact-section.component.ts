@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms'; 
 import { RouterLink } from '@angular/router';
+import { LanguageService } from '../language.service'; 
 
 @Component({
   selector: 'app-contact-section',
@@ -12,6 +13,8 @@ import { RouterLink } from '@angular/router';
 })
 export class ContactSectionComponent {
   
+  constructor(public langService: LanguageService) {}
+
   contactData = {
     name: '',
     email: '',

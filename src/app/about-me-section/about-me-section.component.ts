@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LanguageService } from '../language.service';
+
 
 @Component({
   selector: 'app-about-me-section',
@@ -8,5 +10,7 @@ import { Component } from '@angular/core';
   styleUrl: './about-me-section.component.scss'
 })
 export class AboutMeSectionComponent {
+
+  constructor(public langService: LanguageService) {}
 
 }

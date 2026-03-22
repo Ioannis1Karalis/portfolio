@@ -1,48 +1,95 @@
 <section class="contact-section" id="contact">
   <div class="left-content">
-    <span class="subtitle">Contact me</span>
-    <h2>Let's work<br />together</h2>
+    
+    @if (langService.currentLang === 'EN') {
+      <span class="subtitle">Contact me</span>
+      <h2>Let's work<br />together</h2>
+    } @else {
+      <span class="subtitle">Kontaktiere mich</span>
+      <h2>Lass uns gemeinsam<br />durchstarten</h2>
+    }
+
     <div class="text-block">
-      <h3>Got a problem to solve?</h3>
-      <p>
-        I am currently looking for an opportunity to bring my passion for coding
-        and problem-solving to a dynamic team. Whether it's building intuitive
-        interfaces or tackling tricky challenges, I am highly motivated to add
-        value to your next project.
-      </p>
-      <p>Need a Frontend developer? <strong>Let's talk!</strong></p>
+      @if (langService.currentLang === 'EN') {
+        <h3>Got a problem to solve?</h3>
+        <p>
+          I am currently looking for an opportunity to bring my passion for coding
+          and problem-solving to a dynamic team. Whether it's building intuitive
+          interfaces or tackling tricky challenges, I am highly motivated to add
+          value to your next project.
+        </p>
+        <p>Need a Frontend developer? <strong>Let's talk!</strong></p>
+      } @else {
+        <h3>Du hast ein Problem zu lösen?</h3>
+        <p>
+          Ich bin derzeit auf der Suche nach einer Möglichkeit, meine Leidenschaft fürs Programmieren und Problemlösen in ein dynamisches Team einzubringen. Ob es darum geht, intuitive Benutzeroberflächen zu entwickeln, oder knifflige Herausforderungen zu meistern – ich bin hoch motiviert, dein nächstes Projekt voranzubringen.
+        </p>
+        <p>Brauchst du einen Frontend-Entwickler? <strong>Lass uns reden!</strong></p>
+      }
     </div>
   </div>
 
   <div class="right-content">
     <form class="contact-form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
+      
       <div class="input-group">
-        <label for="name">What's your name?</label>
-        <input type="text" id="name" name="name" placeholder="Your name goes here" required 
-        [(ngModel)]="contactData.name" #nameField="ngModel" [ngModelOptions]="{ updateOn: 'blur' }"/>
+        @if (langService.currentLang === 'EN') {
+          <label for="name">What's your name?</label>
+        } @else {
+          <label for="name">Wie lautet dein Name?</label>
+        }
+        
+        <input type="text" id="name" name="name" 
+               [placeholder]="langService.currentLang === 'EN' ? 'Your name goes here' : 'Dein Name kommt hierhin'" 
+               required 
+               [(ngModel)]="contactData.name" #nameField="ngModel" [ngModelOptions]="{ updateOn: 'blur' }"/>
 
-        <span class="error-msg" *ngIf=" nameField.invalid && (nameField.touched || contactForm.submitted)">
-          Oops! it seems your name is missing
+        <span class="error-msg" *ngIf="nameField.invalid && (nameField.touched || contactForm.submitted)">
+          @if (langService.currentLang === 'EN') {
+            Oops! It seems your name is missing
+          } @else {
+            Hoppla! Es scheint, als fehlt dein Name
+          }
         </span>
       </div>
 
       <div class="input-group">
-        <label for="email">What's your email?</label>
-        <input type="email" id="email" name="email" placeholder="youremail@email.com" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-        [(ngModel)]="contactData.email" #emailField="ngModel" ngModelOptions]="{ updateOn: 'blur' }"/>
-
-        <span class="error-msg" *ngIf=" emailField.invalid && (emailField.touched || contactForm.submitted)">
-          Hoppla! your email is required and must be valid
+        @if (langService.currentLang === 'EN') {
+          <label for="email">What's your email?</label>
+        } @else {
+          <label for="email">Wie lautet deine E-Mail-Adresse?</label>
+        }
+        
+        <input type="email" id="email" name="email" 
+               [placeholder]="langService.currentLang === 'EN' ? 'youremail@email.com' : 'deine-email@email.de'" 
+               required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+               [(ngModel)]="contactData.email" #emailField="ngModel" [ngModelOptions]="{ updateOn: 'blur' }"/> <span class="error-msg" *ngIf="emailField.invalid && (emailField.touched || contactForm.submitted)">
+          @if (langService.currentLang === 'EN') {
+            Hoppla! Your email is required and must be valid
+          } @else {
+            Hoppla! Deine E-Mail ist erforderlich und muss gültig sein
+          }
         </span>
       </div>
 
       <div class="input-group">
-        <label for="message">How can I help you?</label>
-        <textarea id="message" name="message" placeholder="Hello Ioannis, I am interested in..." rows="1" required
-          [(ngModel)]="contactData.message" #messageField="ngModel" [ngModelOptions]="{ updateOn: 'blur' }"></textarea>
+        @if (langService.currentLang === 'EN') {
+          <label for="message">How can I help you?</label>
+        } @else {
+          <label for="message">Wie kann ich dir helfen?</label>
+        }
+        
+        <textarea id="message" name="message" 
+                  [placeholder]="langService.currentLang === 'EN' ? 'Hello Ioannis, I am interested in...' : 'Hallo Ioannis, ich interessiere mich für...'" 
+                  rows="1" required
+                  [(ngModel)]="contactData.message" #messageField="ngModel" [ngModelOptions]="{ updateOn: 'blur' }"></textarea>
 
-        <span class="error-msg" *ngIf=" messageField.invalid && (messageField.touched || contactForm.submitted)">
-          What do you need to develop?
+        <span class="error-msg" *ngIf="messageField.invalid && (messageField.touched || contactForm.submitted)">
+          @if (langService.currentLang === 'EN') {
+            What do you need to develop?
+          } @else {
+            Was möchtest du entwickeln lassen?
+          }
         </span>
       </div>
 
@@ -53,22 +100,39 @@
             <span class="checkmark"></span>
           </label>
           <span class="privacy-text">
-            I've read the <a routerLink="/privacy-policy">privacy policy</a> and agree to the
-            processing of my data as outlined.
+            @if (langService.currentLang === 'EN') {
+              I've read the <a routerLink="/privacy-policy">privacy policy</a> and agree to the processing of my data as outlined.
+            } @else {
+              Ich habe die <a routerLink="/privacy-policy">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.
+            }
           </span>
         </div>
 
         <span class="error-msg" *ngIf="privacyField.invalid && contactForm.submitted">
-          Please accept the privacy policy.
+          @if (langService.currentLang === 'EN') {
+            Please accept the privacy policy.
+          } @else {
+            Bitte akzeptiere die Datenschutzerklärung.
+          }
         </span>
       </div>
 
       <div class="submit-group">
         <div class="success-message" *ngIf="isSubmitted">
-          Thank you! Your message has been sent.
+          @if (langService.currentLang === 'EN') {
+            Thank you! Your message has been sent.
+          } @else {
+            Danke! Deine Nachricht wurde erfolgreich gesendet.
+          }
         </div>
 
-        <button type="submit" class="submit-btn" [class.is-disabled]="contactForm.invalid">Say Hello ;)</button>
+        <button type="submit" class="submit-btn" [class.is-disabled]="contactForm.invalid">
+          @if (langService.currentLang === 'EN') {
+            Say Hello ;)
+          } @else {
+            Sag Hallo ;)
+          }
+        </button>
       </div>
     </form>
   </div>

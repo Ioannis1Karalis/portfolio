@@ -2,8 +2,14 @@
   <div class="footer-content">
     <div class="left-side">
       <img src="../../assets/img/logo.png" alt="Ioannis Logo" class="logo" />
-      <span class="info-text">Web Developer</span>
-      <span class="info-text">Munich Germany</span>
+      
+      @if (langService.currentLang === 'EN') {
+        <span class="info-text">Web Developer</span>
+        <span class="info-text">Munich, Germany</span>
+      } @else {
+        <span class="info-text">Webentwickler</span>
+        <span class="info-text">München, Deutschland</span>
+      }
     </div>
 
     <div class="center-side">
@@ -14,7 +20,14 @@
       <a href="https://github.com/Ioannis1Karalis" target="_blank" class="footer-link">Github</a>
       <a href="https://www.linkedin.com/in/ioannis-karalis-096bb7162/" target="_blank" class="footer-link">LinkedIn</a>
       <a href="mailto:i.karalis@outlook.de" class="footer-link">Email</a>
-      <a routerLink="/legal-notice" class="footer-link">Legal Notice</a>
+      
+      <a routerLink="/legal-notice" class="footer-link">
+        @if (langService.currentLang === 'EN') {
+          Legal Notice
+        } @else {
+          Impressum
+        }
+      </a>
     </div>
   </div>
 </footer>

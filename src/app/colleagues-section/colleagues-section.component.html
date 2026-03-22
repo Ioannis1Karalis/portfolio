@@ -1,5 +1,10 @@
 <section class="testimonials-section">
-  <h2>What my colleagues say about me</h2>
+  
+  @if (langService.currentLang === 'EN') {
+    <h2>What my colleagues say about me</h2>
+  } @else {
+    <h2>Was meine Kollegen über mich sagen</h2>
+  }
 
   <div class="carousel-wrapper">
     <div class="static-quote-mark">
@@ -8,6 +13,7 @@
 
     <div class="carousel-track" [style.transition]="isTransitioning ? 'transform 0.5s ease-in-out' : 'none'"
       [style.transform]="'translateX(calc(-' + currentIndex * 100 + '% - ' + currentIndex * 40 + 'px))'">
+      
       <div class="testimonial-card" *ngFor="let t of displayTestimonials; let i = index" [class.active]="i === currentIndex">
         <p class="feedback-text">{{ t.text }}</p>
         <div class="author-info">
@@ -15,6 +21,7 @@
           <span class="author-name">{{ t.author }}</span>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -26,8 +33,7 @@
     </button>
 
     <div class="dots">
-      <span class="dot" *ngFor="let t of testimonials; let i = index" [class.active]="isDotActive(i)" (click)="setIndex(i)">
-      </span>
+      <span class="dot" *ngFor="let t of testimonials; let i = index" [class.active]="isDotActive(i)" (click)="setIndex(i)"></span>
     </div>
 
     <button class="arrow-btn" (click)="next()">

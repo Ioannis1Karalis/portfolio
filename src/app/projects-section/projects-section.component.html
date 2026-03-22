@@ -1,11 +1,20 @@
 <section class="projects-section" id="projects">
   <div class="header-content">
     <span class="subtitle">Portfolio</span>
-    <h2>Featured Projects</h2>
-    <p class="description">
-      Explore a selection of my work here - Interact with<br />
-      projects to see my skills in action.
-    </p>
+    
+    @if (langService.currentLang === 'EN') {
+      <h2>Projects</h2>
+      <p class="description">
+        Explore a selection of my work here - Interact with<br />
+        projects to see my skills in action.
+      </p>
+    } @else {
+      <h2>Projekte</h2>
+      <p class="description">
+        Entdecke hier eine Auswahl meiner Arbeit – interagiere mit<br />
+        den Projekten, um meine Fähigkeiten in Aktion zu sehen.
+      </p>
+    }
   </div>
 
   <div class="project-list">
@@ -14,9 +23,7 @@
         <h3 class="project-name">Join</h3>
         <img class="arrow-icon" src="../../assets/img/icons/other-icons/arrow_outward.png"/>
       </div>
-
       <span class="project-tech">JavaScript<span class="tech-sep">|</span>HTML<span class="tech-sep">|</span>CSS<span class="tech-sep">|</span>Firebase</span>
-
       <div class="project-preview-wrapper">
         <img src="../../assets/img/projects/join.png" alt="Join project preview"/>
         <div class="stiches-lines"></div>
@@ -28,9 +35,7 @@
         <h3 class="project-name">Sharkie</h3>
         <img class="arrow-icon" src="../../assets/img/icons/other-icons/arrow_outward.png"/>
       </div>
-
       <span class="project-tech">JavaScript<span class="tech-sep">|</span>HTML<span class="tech-sep">|</span>CSS</span>
-      
       <div class="project-preview-wrapper">
         <img src="../../assets/img/projects/sharkie.png" alt="sharkie preview"/>
         <div class="stiches-lines"></div>
@@ -42,9 +47,7 @@
         <h3 class="project-name">Pokedex</h3>
         <img class="arrow-icon" src="../../assets/img/icons/other-icons/arrow_outward.png"/>
       </div>
-
       <span class="project-tech">JavaScript<span class="tech-sep">|</span>HTML<span class="tech-sep">|</span>CSS<span class="tech-sep">|</span>REST-API</span>
-
       <div class="project-preview-wrapper">
         <img src="../../assets/img/projects/pokedex.png" alt="pokedex project preview"/>
         <div class="stiches-lines"></div>
@@ -56,9 +59,7 @@
         <h3 class="project-name">Ring of Fire</h3>
         <img class="arrow-icon" src="../../assets/img/icons/other-icons/arrow_outward.png"/>
       </div>
-      
       <span class="project-tech">Angular<span class="tech-sep">|</span>TypeScript<span class="tech-sep">|</span>HTML<span class="tech-sep">|</span>CSS<span class="tech-sep">|</span>Firebase</span>
-      
       <div class="project-preview-wrapper">
         <img src="../../assets/img/projects/ringoffire.png" alt="ringoffire preview"/>
         <div class="stiches-lines"></div>
@@ -70,9 +71,7 @@
         <h3 class="project-name">Bestell App</h3>
         <img class="arrow-icon" src="../../assets/img/icons/other-icons/arrow_outward.png"/>
       </div>
-
       <span class="project-tech">JavaScript<span class="tech-sep">|</span>HTML<span class="tech-sep">|</span>CSS</span>
-
       <div class="project-preview-wrapper">
         <img src="../../assets/img/projects/bestellapp.png" alt="bestellapp project preview"/>
         <div class="stiches-lines"></div>
@@ -81,51 +80,63 @@
   </div>
 </section>
 
-
-<div class="overlay-backdrop" *ngIf="currentProject" (click)="closeOverlay()">
-  
-  <div class="modal-content" (click)="$event.stopPropagation()">
+@if (currentProject) {
+  <div class="overlay-backdrop" (click)="closeOverlay()">
     
-    <button class="close-btn" (click)="closeOverlay()">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-
-    <div class="modal-left">
-      <span class="project-number">{{ currentProject.id }}</span>
-      <h2 class="project-title">{{ currentProject.title }}</h2>
+    <div class="modal-content" (click)="$event.stopPropagation()">
       
-      <h3 class="subtitle">What is this project about?</h3>
-      <p class="description">{{ currentProject.description }}</p>
+      <button class="close-btn" (click)="closeOverlay()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
 
-      <div class="skills-container">
-        <div class="skill-badge" *ngFor="let skill of currentProject.skills">
-          <img [src]="'../../assets/img/icons/frontend-skills/overlay-icons/' + skill + '.png'" [alt]="skill">
-          <span>{{ skill }}</span>
+      <div class="modal-left">
+        <span class="project-number">{{ currentProject.id }}</span>
+        <h2 class="project-title">{{ currentProject.title }}</h2>
+        
+        @if (langService.currentLang === 'EN') {
+          <h3 class="subtitle">What is this project about?</h3>
+        } @else {
+          <h3 class="subtitle">Worum geht es in diesem Projekt?</h3>
+        }
+        
+        <p class="description">{{ currentProject.description }}</p>
+
+        <div class="skills-container">
+          @for (skill of currentProject.skills; track skill) {
+            <div class="skill-badge">
+              <img [src]="'../../assets/img/icons/frontend-skills/overlay-icons/' + skill + '.png'" [alt]="skill">
+              <span>{{ skill }}</span>
+            </div>
+          }
+        </div>
+
+        <div class="action-left">
+          <a [href]="currentProject.githubUrl" target="_blank" class="outline-btn">
+            GitHub 
+            <img src="../../assets/img/icons/other-icons/arrow_outward_green.png" class="arrow-img" alt="Pfeil">
+          </a>
+          <a [href]="currentProject.liveUrl" target="_blank" class="outline-btn">
+            Live Test
+            <img src="../../assets/img/icons/other-icons/arrow_outward_green.png" class="arrow-img" alt="Pfeil">
+          </a>
         </div>
       </div>
 
-      <div class="action-left">
-        <a [href]="currentProject.githubUrl" target="_blank" class="outline-btn">
-          GitHub 
-        <img src="../../assets/img/icons/other-icons/arrow_outward_green.png" class="arrow-img" alt="Pfeil">
-        </a>
-       <a [href]="currentProject.liveUrl" target="_blank" class="outline-btn">
-        Live Test
-        <img src="../../assets/img/icons/other-icons/arrow_outward_green.png" class="arrow-img" alt="Pfeil">
-       </a>
+      <div class="modal-right">
+        <img [src]="currentProject.image" alt="Project Preview" class="project-image">
+        
+        <button class="next-btn" (click)="nextProject()">
+          @if (langService.currentLang === 'EN') {
+            Next project 
+          } @else {
+            Nächstes Projekt 
+          }
+          <img src="../../assets/img/icons/other-icons/arrow.png" class="next-arrow" alt="Next">
+        </button>
       </div>
-     </div>
 
-    <div class="modal-right">
-      <img [src]="currentProject.image" alt="Project Preview" class="project-image">
-      
-      <button class="next-btn" (click)="nextProject()">
-        Next project 
-        <img src="../../assets/img/icons/other-icons/arrow.png" class="next-arrow" alt="Next">
-      </button>
     </div>
-
   </div>
-</div>
+}

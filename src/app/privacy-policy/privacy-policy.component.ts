@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router'; 
 import { NavbarComponent } from '../navbar/navbar.component'; 
 import { FooterComponent } from '../footer/footer.component'; 
+import { LanguageService } from '../language.service';
+
 
 @Component({
   selector: 'app-privacy-policy',
@@ -11,7 +13,7 @@ import { FooterComponent } from '../footer/footer.component';
   styleUrl: './privacy-policy.component.scss'
 })
 export class PrivacyPolicyComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, public langService: LanguageService) {}
 
   goHome(): void {
     this.router.navigate(['/']);

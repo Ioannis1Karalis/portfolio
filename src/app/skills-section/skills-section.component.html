@@ -1,23 +1,53 @@
 <section class="skills-section" id="skills">
   
   <div class="skills-info">
-    <span class="subtitle">Technologies</span>
+    
+    @if (langService.currentLang === 'EN') {
+      <span class="subtitle">Technologies</span>
+    } @else {
+      <span class="subtitle">Technologien</span>
+    }
 
     <div class="skills-box">
-      <h2>Skill Set</h2>
       
-      <p class="intro-text">
-        Based on a strong foundation of HTML, CSS, and vanilla JavaScript, I build scalable applications using Angular and TypeScript. I enjoy working across the entire frontend spectrum—from crafting responsive interfaces with Material Design to integrating REST-APIs and Firebase. Agile workflows with Scrum and clean version control via Git complete my daily routine.
-      </p>
+      @if (langService.currentLang === 'EN') {
+        <h2>Skill Set</h2>
+      } @else {
+        <h2>Fähigkeiten</h2>
+      }
+      
+      @if (langService.currentLang === 'EN') {
+        <p class="intro-text">
+          Based on a strong foundation of HTML, CSS, and vanilla JavaScript, I build scalable applications using Angular and TypeScript. I enjoy working across the entire frontend spectrum—from crafting responsive interfaces with Material Design to integrating REST-APIs and Firebase. Agile workflows with Scrum and clean version control via Git complete my daily routine.
+        </p>
+      } @else {
+        <p class="intro-text">
+          Aufbauend auf einem soliden Fundament aus HTML, CSS und Vanilla JavaScript entwickle ich skalierbare Anwendungen mit Angular und TypeScript. Ich arbeite gerne im gesamten Frontend-Spektrum – von der Gestaltung responsiver Interfaces mit Material Design bis zur Integration von REST-APIs und Firebase. Agile Workflows mit Scrum und saubere Versionskontrolle via Git runden meinen Arbeitsalltag ab.
+        </p>
+      }
 
-      <h3>You need <span class="highlight">another skill?</span></h3>      
+      @if (langService.currentLang === 'EN') {
+        <h3>You need <span class="highlight">another skill?</span></h3>      
+      } @else {
+        <h3>Du brauchst <span class="highlight">einen anderen Skill?</span></h3>      
+      }
       
-      <p class="sub-text">
-        I am always excited to tackle new challenges. If your project requires a technology not listed here, I'd love to hear about it and expand my expertise!
-      </p>
+      @if (langService.currentLang === 'EN') {
+        <p class="sub-text">
+          I am always excited to tackle new challenges. If your project requires a technology not listed here, I'd love to hear about it and expand my expertise!
+        </p>
+      } @else {
+        <p class="sub-text">
+          Ich freue mich immer auf neue Herausforderungen. Falls dein Projekt eine Technologie erfordert, die hier nicht aufgeführt ist, höre ich gerne davon und erweitere meine Expertise!
+        </p>
+      }
 
       <button class="btn-talk" (click)="scrollTo('contact')">
-        <span>Let's Talk</span>
+        @if (langService.currentLang === 'EN') {
+          <span>Let's Talk</span>
+        } @else {
+          <span>Lass uns reden</span>
+        }
       </button>
     </div>
   </div>
@@ -77,7 +107,11 @@
     <div class="skill-item has-tooltip">
       
       <div class="custom-tooltip">
-        <span class="tooltip-text">I have a special<br>interest in learning</span>
+        @if (langService.currentLang === 'EN') {
+          <span class="tooltip-text">I have a special<br>interest in learning</span>
+        } @else {
+          <span class="tooltip-text">Ich möchte als Nächstes<br>gerne Folgendes lernen</span>
+        }
         <div class="tooltip-icons">
           <div class="tooltip-skill">
             <img src="../../assets/img/icons/frontend-skills/React-color.png" alt="React">
@@ -91,7 +125,7 @@
       </div>
       
       <img src="../../assets/img/icons/frontend-skills/GrowthMindset.png" alt="Growth mindset">
-      <span>Growth mindset</span>
+      <span>Growth Mindset</span>
       
     </div>
 

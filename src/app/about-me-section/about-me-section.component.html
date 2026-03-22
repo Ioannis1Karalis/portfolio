@@ -6,30 +6,58 @@
   </div>
 
   <div class="myInformations">
-    <span class="subtitle">Who I Am</span>
+    
+    @if (langService.currentLang === 'EN') {
+      <span class="subtitle">Who I Am</span>
+    } @else {
+      <span class="subtitle">Wer ich bin</span>
+    }
 
     <div class="about-box">
-      <h2>About <span class="space"></span> me</h2>
+      
+      @if (langService.currentLang === 'EN') {
+        <h2>About <span class="space"></span> me</h2>
+      } @else {
+        <h2>Über <span class="space"></span> mich</h2>
+      }
 
-      <p class="intro-text">
-        Hey there, I'm Ioannis! I am a passionate Frontend Developer who loves bridging the gap between design and engineering. My drive comes from transforming complex problems into clean, intuitive, and pixel-perfect user interfaces.
-      </p>
+      @if (langService.currentLang === 'EN') {
+        <p class="intro-text">
+          Hey there, I'm Ioannis! I am a passionate Frontend Developer who loves bridging the gap between design and engineering. My drive comes from transforming complex problems into clean, intuitive, and pixel-perfect user interfaces.
+        </p>
+      } @else {
+        <p class="intro-text">
+          Hallo, ich bin Ioannis! Ich bin ein leidenschaftlicher Frontend-Entwickler, der es liebt, die Lücke zwischen Design und Technik zu schließen. Mein Antrieb ist es, komplexe Probleme in saubere, intuitive und pixelgenaue Benutzeroberflächen zu verwandeln.
+        </p>
+      }
 
       <div class="info-list">
         
         <div class="info-item">
           <img src="../../assets/img/icons/other-icons/location.png" alt="Location">
-          <p>Based in Munich, Germany. I am fully equipped for remote work, but also open to hybrid setups and exciting new opportunities.</p>
+          @if (langService.currentLang === 'EN') {
+            <p>Based in Munich, Germany. I am fully equipped for remote work, but also open to hybrid setups and exciting new opportunities.</p>
+          } @else {
+            <p>Ansässig in München. Ich bin bestens für Remote-Arbeit ausgestattet, aber auch offen für hybride Modelle und spannende neue Möglichkeiten.</p>
+          }
         </div>
 
         <div class="info-item">
           <img src="../../assets/img/icons/other-icons/mind.png" alt="Mindset">
-          <p>I bring a strong growth mindset and am always eager to dive into new technologies. Continuous learning is an essential part of my daily workflow.</p>
+          @if (langService.currentLang === 'EN') {
+            <p>I bring a strong growth mindset and am always eager to dive into new technologies. Continuous learning is an essential part of my daily workflow.</p>
+          } @else {
+            <p>Ich bringe eine hohe Lernbereitschaft mit und arbeite mich gerne in neue Technologien ein. Kontinuierliches Dazulernen ist ein wesentlicher Bestandteil meines Arbeitsalltags.</p>
+          }
         </div>
 
         <div class="info-item">
           <img src="../../assets/img/icons/other-icons/person.png" alt="Person">
-          <p>I tackle challenges with analytical thinking and creativity. I view every bug as an opportunity to grow and always strive for elegant, maintainable solutions.</p>
+          @if (langService.currentLang === 'EN') {
+            <p>I tackle challenges with analytical thinking and creativity. I view every bug as an opportunity to grow and always strive for elegant, maintainable solutions.</p>
+          } @else {
+            <p>Ich gehe Herausforderungen mit analytischem Denken und Kreativität an. Ich sehe jeden Bug als Chance, mich weiterzuentwickeln, und strebe stets nach eleganten, wartbaren Lösungen.</p>
+          }
         </div>
 
       </div>

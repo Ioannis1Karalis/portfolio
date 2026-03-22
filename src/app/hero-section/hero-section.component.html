@@ -3,17 +3,29 @@
   <app-navbar></app-navbar>
 
   <div class="title">
-      <span>Frontend Developer</span>
+      @if (langService.currentLang === 'EN') {
+        <span>Frontend Developer</span>
+      } @else {
+        <span>Frontend Entwickler</span>
+      }
+      
       <h1>Ioannis Karalis</h1>
 
       <div class="buttons">
-          <button class="marquee-btn" (click)="scrollTo('projects')">
+        <button class="marquee-btn" (click)="scrollTo('projects')">
+          @if (langService.currentLang === 'EN') {
             <span>Check my work</span>
-          </button>
-          
-          <button class="marquee-btn" (click)="scrollTo('contact')">
+          } @else {
+            <span>Projekte ansehen</span>
+          }
+        </button>
+        <button class="marquee-btn" (click)="scrollTo('contact')">
+          @if (langService.currentLang === 'EN') {
             <span>Contact me</span>
-          </button>
+          } @else {
+            <span>Kontaktiere mich</span>
+          }
+        </button>
       </div>
   </div>
 

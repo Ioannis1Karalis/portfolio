@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { Router } from '@angular/router';
+import { LanguageService } from '../../app/language.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +16,7 @@ export class NavbarComponent {
   currentLang: 'EN' | 'DE' = 'EN';
   isMenuOpen: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public langService: LanguageService) {}
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;

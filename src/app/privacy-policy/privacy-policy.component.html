@@ -5,27 +5,50 @@
   <main class="privacy-policy-content">
 
     <button class="mobile-back-btn" (click)="goHome()">
-      <img src="../../assets/img/icons/other-icons/arrow_left.png" alt="Back to Homepage">
+      <img src="../../assets/img/icons/other-icons/arrow_left.png" 
+           [alt]="langService.currentLang === 'EN' ? 'Back to Homepage' : 'Zurück zur Startseite'">
     </button>    
     
-    <h1>Privacy Policy</h1>
+    @if (langService.currentLang === 'EN') {
+      <h1>Privacy Policy</h1>
+    } @else {
+      <h1>Datenschutzerklärung</h1>
+    }
 
     <section>
-      <h2 class="imprint-title">1. An overview of data protection</h2>
-      <p><strong>General information</strong><br>
-      The following information will provide you with an easy to navigate overview of what will happen with your personal data when you visit this website. The term "personal data" comprises all data that can be used to personally identify you. For detailed information about the subject matter of data protection, please consult our Data Protection Declaration, which we have included beneath this copy.</p>
+      @if (langService.currentLang === 'EN') {
+        <h2 class="imprint-title">1. An overview of data protection</h2>
+        <p><strong>General information</strong><br>
+        The following information will provide you with an easy to navigate overview of what will happen with your personal data when you visit this website. The term "personal data" comprises all data that can be used to personally identify you. For detailed information about the subject matter of data protection, please consult our Data Protection Declaration, which we have included beneath this copy.</p>
+      } @else {
+        <h2 class="imprint-title">1. Datenschutz auf einen Blick</h2>
+        <p><strong>Allgemeine Hinweise</strong><br>
+        Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
+      }
     </section>
 
     <section>
-      <h2>2. General information and mandatory information</h2>
-      <p><strong>Data protection</strong><br>
-      The operators of this website take the protection of your personal data very seriously. We treat your personal data as confidential and in accordance with the statutory data protection regulations and this Data Protection Declaration.</p>
-      <p>When you use this website, various personal data are collected. Personal data comprises data that can be used to personally identify you. This Data Protection Declaration explains which data we collect as well as the purposes we use this data for. It also explains how, and for which purpose the information is collected.</p>
+      @if (langService.currentLang === 'EN') {
+        <h2>2. General information and mandatory information</h2>
+        <p><strong>Data protection</strong><br>
+        The operators of this website take the protection of your personal data very seriously. We treat your personal data as confidential and in accordance with the statutory data protection regulations and this Data Protection Declaration.</p>
+        <p>When you use this website, various personal data are collected. Personal data comprises data that can be used to personally identify you. This Data Protection Declaration explains which data we collect as well as the purposes we use this data for. It also explains how, and for which purpose the information is collected.</p>
+      } @else {
+        <h2>2. Allgemeine Hinweise und Pflichtinformationen</h2>
+        <p><strong>Datenschutz</strong><br>
+        Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+        <p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.</p>
+      }
     </section>
 
     <section>
-      <h2>3. Information about the responsible party</h2>
-      <p>The controller responsible for data processing on this website is:</p>
+      @if (langService.currentLang === 'EN') {
+        <h2>3. Information about the responsible party</h2>
+        <p>The controller responsible for data processing on this website is:</p>
+      } @else {
+        <h2>3. Hinweis zur verantwortlichen Stelle</h2>
+        <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+      }
       <ul>
         <li>Ioannis Karalis</li>
         <li>Bertholdstr. 17</li>
@@ -35,31 +58,57 @@
     </section>
 
     <section>
-      <h2>4. Data collection on this website</h2>
-      <p><strong>Server log files</strong><br>
-      The provider of this website and its pages automatically collects and stores information in so-called server log files, which your browser communicates to us automatically. The information comprises:</p>
-      <ul>
-        <li>The type and version of browser used</li>
-        <li>The used operating system</li>
-        <li>Referrer URL</li>
-        <li>The hostname of the accessing computer</li>
-        <li>The time of the server inquiry</li>
-        <li>The IP address</li>
-      </ul>
-      <p>This data is not merged with other data sources. This data is recorded on the basis of Art. 6(1)(f) GDPR. The operator of the website has a legitimate interest in the technically error free depiction and the optimization of the operator's website. In order to achieve this, server log files must be recorded.</p>
+      @if (langService.currentLang === 'EN') {
+        <h2>4. Data collection on this website</h2>
+        <p><strong>Server log files</strong><br>
+        The provider of this website and its pages automatically collects and stores information in so-called server log files, which your browser communicates to us automatically. The information comprises:</p>
+        <ul>
+          <li>The type and version of browser used</li>
+          <li>The used operating system</li>
+          <li>Referrer URL</li>
+          <li>The hostname of the accessing computer</li>
+          <li>The time of the server inquiry</li>
+          <li>The IP address</li>
+        </ul>
+        <p>This data is not merged with other data sources. This data is recorded on the basis of Art. 6(1)(f) GDPR. The operator of the website has a legitimate interest in the technically error free depiction and the optimization of the operator's website. In order to achieve this, server log files must be recorded.</p>
+      } @else {
+        <h2>4. Datenerfassung auf dieser Website</h2>
+        <p><strong>Server-Log-Dateien</strong><br>
+        Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:</p>
+        <ul>
+          <li>Browsertyp und Browserversion</li>
+          <li>verwendetes Betriebssystem</li>
+          <li>Referrer URL</li>
+          <li>Hostname des zugreifenden Rechners</li>
+          <li>Uhrzeit der Serveranfrage</li>
+          <li>IP-Adresse</li>
+        </ul>
+        <p>Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Log-Files erfasst werden.</p>
+      }
     </section>
 
     <section>
-      <h2>5. Inquiry by e-mail or telephone</h2>
-      <p>If you contact us by e-mail or telephone, your request, including all resulting personal data (name, request) will be stored and processed by us for the purpose of processing your request. We do not pass these data on without your consent.</p>
-      <p>These data are processed on the basis of Art. 6(1)(b) GDPR if your inquiry is related to the fulfillment of a contract or is required for the performance of pre-contractual measures. In all other cases, the data are processed on the basis of our legitimate interest in the effective handling of inquiries submitted to us (Art. 6(1)(f) GDPR) or on the basis of your consent (Art. 6(1)(a) GDPR) if it has been obtained.</p>
+      @if (langService.currentLang === 'EN') {
+        <h2>5. Inquiry by e-mail or telephone</h2>
+        <p>If you contact us by e-mail or telephone, your request, including all resulting personal data (name, request) will be stored and processed by us for the purpose of processing your request. We do not pass these data on without your consent.</p>
+        <p>These data are processed on the basis of Art. 6(1)(b) GDPR if your inquiry is related to the fulfillment of a contract or is required for the performance of pre-contractual measures. In all other cases, the data are processed on the basis of our legitimate interest in the effective handling of inquiries submitted to us (Art. 6(1)(f) GDPR) or on the basis of your consent (Art. 6(1)(a) GDPR) if it has been obtained.</p>
+      } @else {
+        <h2>5. Anfrage per E-Mail oder Telefon</h2>
+        <p>Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+        <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), sofern diese abgefragt wurde.</p>
+      }
     </section>
 
     <section>
-      <h2>6. Your Rights</h2>
-      <p>You have the right to receive information about the origin, recipient, and purpose of your stored personal data at any time without a fee. You also have the right to demand that this data be rectified or eradicated. If you have consented to data processing, you have the option to revoke this consent at any time, which shall affect all future data processing. Moreover, you have the right to demand that the processing of your data be restricted under certain circumstances. You also have the right to log a complaint with the competent supervising agency.</p>
-      
-      <p>Date: Mar 18, 2026</p>
+      @if (langService.currentLang === 'EN') {
+        <h2>6. Your Rights</h2>
+        <p>You have the right to receive information about the origin, recipient, and purpose of your stored personal data at any time without a fee. You also have the right to demand that this data be rectified or eradicated. If you have consented to data processing, you have the option to revoke this consent at any time, which shall affect all future data processing. Moreover, you have the right to demand that the processing of your data be restricted under certain circumstances. You also have the right to log a complaint with the competent supervising agency.</p>
+        <p>Date: Mar 23, 2026</p>
+      } @else {
+        <h2>6. Ihre Rechte</h2>
+        <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
+        <p>Stand: 23. März 2026</p>
+      }
     </section>
 
   </main>

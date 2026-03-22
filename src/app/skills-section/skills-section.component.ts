@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-skills-section',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './skills-section.component.scss'
 })
 export class SkillsSectionComponent {
+
+  constructor(public langService: LanguageService) {}
 
   scrollTo(elementId: string): void {
     const element = document.getElementById(elementId);
