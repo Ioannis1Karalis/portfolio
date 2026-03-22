@@ -187,6 +187,7 @@
     right: 24px;
     background-image: radial-gradient(circle at top right,rgba(8, 70, 59, 0.6) 20%,#1C1C1C 66%);
     border: 1px solid #3DCFB6;
+    
     border-radius: 32px;
     padding: 30px 74px;
     display: flex;
@@ -223,6 +224,7 @@
       border-radius: 30px;
       cursor: pointer;
       transition: border-color 0.3s ease;
+      width: 103px;
 
       &:hover {
         border-color: white;

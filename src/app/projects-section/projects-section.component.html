@@ -126,16 +126,16 @@
 
       <div class="modal-right">
         <img [src]="currentProject.image" alt="Project Preview" class="project-image">
-        
-        <button class="next-btn" (click)="nextProject()">
-          @if (langService.currentLang === 'EN') {
-            Next project 
-          } @else {
-            Nächstes Projekt 
-          }
-          <img src="../../assets/img/icons/other-icons/arrow.png" class="next-arrow" alt="Next">
-        </button>
       </div>
+
+      <button class="next-btn" (click)="nextProject()">
+        @if (langService.currentLang === 'EN') {
+          Next project 
+        } @else {
+          Nächstes Projekt 
+        }
+        <img src="../../assets/img/icons/other-icons/arrow.png" class="next-arrow" alt="Next">
+      </button>
 
     </div>
   </div>

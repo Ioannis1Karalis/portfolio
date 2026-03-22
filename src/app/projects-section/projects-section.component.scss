@@ -108,9 +108,6 @@
     top: 60%;
     transform: translateY(-50%);
     left: calc(100% + 32px); 
-    
-    /* MATHEMATISCH PERFEKT: Nutzt den restlichen Platz und zieht 62px ab 
-       (32px Lücke + 30px Rand). So hast du IMMER deine >30px Abstand rechts! */
     width: calc(42.8% - 62px); 
     max-width: 320px;
     min-width: 150px;
@@ -180,9 +177,9 @@
   display: flex;
   gap: 64px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  height: 700px;
-  max-height: 90vh;
+  height: 90vh;
   overflow: hidden;
+  padding-bottom: 80px;
 
   .close-btn {
     position: absolute;
@@ -247,7 +244,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    margin-bottom: auto;
+    margin-bottom: 32px;
 
     .skill-badge {
       display: flex;
@@ -306,44 +303,44 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
 
   .project-image {
     width: 500px;
-    border-radius: 30px;
+    border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
-
+}
   .next-btn {
-    position: absolute;
-    bottom: -16px;
-    right: 0;
-    background: transparent;
-    border: none;
-    color: #3dcfb6; 
-    font-size: 18px;
-    font-family: var(--font-karla);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.3s ease;
+  position: absolute;
+  bottom: 50px;
+  right: 64px;
+  background: transparent;
+  border: none;
+  color: #3dcfb6; 
+  font-size: 18px;
+  font-family: var(--font-karla);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+  z-index: 10;
 
+  .next-arrow {
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover {
+    color: #ffffff; 
+    
     .next-arrow {
-      width: auto;
-      object-fit: contain;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    &:hover {
-      color: #ffffff; 
-      
-      .next-arrow {
-        transform: translateX(4px);
-      }
+      transform: translateX(4px);
     }
   }
 }
+
 
 @media (max-width: 1200px) {
   .projects-section {
@@ -358,17 +355,22 @@
     max-width: 590px;
   }
   
-  .modal-content {
-    padding: 48px;
-    gap: 32px;
-  }
-  
   .modal-right .project-image {
-    width: 400px;
+    width: 100%;
   }
 
   .project-row .project-preview-wrapper {
     width: 146px; 
+  }
+
+  .modal-left {
+    .project-number {
+      font-size: 100px;
+    }
+
+    >h2 {
+      font-size: 46px;
+    }
   }
 }
 
@@ -380,6 +382,64 @@
   .project-list {
     max-width: 100%; 
   }
+
+  .modal-content {
+    flex-direction: column-reverse; 
+    overflow-y: auto; 
+    height: auto;
+    max-height: 95vh;
+    padding: 80px 40px 80px 40px; 
+    gap: 32px; 
+
+    .close-btn {
+      top: 24px;
+      right: 24px;
+    }
+  }
+
+  .modal-left {
+    .project-number {
+      font-size: 80px; 
+      line-height: 0.8; 
+      margin-bottom: 8px; 
+    }
+
+    .project-title { 
+      font-size: 
+      40px; margin-bottom: 24px; 
+    }
+
+    .subtitle { 
+      font-size: 22px; 
+      margin-bottom: 12px; 
+    }
+
+    .description { 
+      font-size: 16px; 
+      margin-bottom: 24px; 
+    }
+
+    .skills-container {
+      margin-bottom: 40px !important; 
+    }
+  }
+
+  .modal-right {
+    justify-content: flex-start;
+    margin-top: 16px; 
+
+    .project-image {
+      width: 100%;
+      max-height: 280px; 
+      object-fit: cover; 
+      object-position: top;
+    }
+  }
+
+  .next-btn {
+    right: 40px; 
+    bottom: 24px;
+  }
 }
 
 @media (max-width: 850px) {
@@ -390,46 +450,11 @@
   .projects-section {
     padding: 50px 24px;
   }
-
-  .modal-content {
-    flex-direction: column;
-    height: auto;
-    max-height: 90vh;
-    overflow-y: auto;
-    padding: 40px 24px;
-    padding-bottom: 80px;
-    gap: 24px;
-  }
-
-  .modal-right {
-    order: -1;
-    width: 100%;
-  }
-
-  .modal-right .project-image {
-    width: 100%;
-    margin-top: 40px; 
-  }
-
-  .modal-left .project-number {
-    font-size: 80px;
-  }
-
-  .modal-left .project-title {
-    font-size: 48px;
-    margin-bottom: 24px;
-  }
-
-  .modal-right .next-btn {
-    position: absolute;
-    bottom: 24px;
-    right: 24px;
-  }
 }
 
 @media (max-width: 600px) {
-  .header-content h2 {
-    font-size: 48px;
+  .header-content h2 { 
+    font-size: 48px; 
   }
 
   .project-row {
@@ -439,27 +464,66 @@
     gap: 8px;
   }
 
-  .project-row .project-tech {
-    margin-left: 0;
-    font-size: 14px;
+  .project-row .project-tech { 
+    margin-left: 0; 
+    font-size: 14px; 
   }
-
-  .project-row .arrow-icon {
-    display: none;
+  .project-row .arrow-icon { 
+    display: none; 
   }
 
   .modal-content {
-    width: 95%;
-    border-radius: 24px;
+    padding: 80px 24px 80px 24px;
+    gap: 32px;
+
+    .close-btn {
+      top: 16px;
+      right: 16px;
+      svg { width: 28px; height: 28px; }
+    }
   }
 
-  .modal-content .close-btn {
-    top: 16px;
-    right: 16px;
+  .modal-left {
+    .project-number { 
+      font-size: 56px; 
+    }
+
+    .project-title { 
+      font-size: 30px; 
+      margin-bottom: 16px; 
+    }
+
+    .subtitle { 
+      font-size: 20px; 
+    }
+
+    .description { 
+      font-size: 16px; 
+      margin-bottom: 24px; 
+    }
+    
+    .skills-container {
+      margin-bottom: 32px !important;
+    }
+
+    .action-left {
+      .outline-btn { 
+        width: 100%; 
+        box-sizing: border-box; 
+        font-size: 16px;
+        padding: 12px 6px;
+      }
+    }
   }
 
-  .modal-right .project-image {
-    margin-top: 32px;
+  .modal-right {
+    margin-top: 8px;
+  }
+
+  .next-btn {
+    right: 24px;
+    bottom: 24px;
+    font-size: 16px;
   }
 }
 
@@ -474,33 +538,5 @@
 
   .project-row .project-name {
     font-size: 28px;
-  }
-
-  .modal-left .project-number {
-    font-size: 64px;
-  }
-
-  .modal-left .project-title {
-    font-size: 36px;
-  }
-
-  .modal-left .action-left {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .modal-left .action-left .outline-btn {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .modal-right .next-btn {
-    bottom: 16px;
-    right: 16px;
-    font-size: 16px;
-  }
-  
-  .modal-content {
-    padding-bottom: 70px;
   }
 }
