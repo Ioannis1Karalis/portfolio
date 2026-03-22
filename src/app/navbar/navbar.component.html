@@ -2,12 +2,8 @@
   
   <div class="nav-left desktop-only">
     <div class="lang-switch">
-      <span class="lang-btn" 
-            [class.active]="langService.currentLang === 'EN'" 
-            (click)="langService.setLanguage('EN')">EN</span>
-      <span class="lang-btn" 
-            [class.active]="langService.currentLang === 'DE'" 
-            (click)="langService.setLanguage('DE')">DE</span>
+      <span class="lang-btn" [class.active]="langService.currentLang === 'EN'" (click)="langService.setLanguage('EN')">EN</span>
+      <span class="lang-btn" [class.active]="langService.currentLang === 'DE'" (click)="langService.setLanguage('DE')">DE</span>
     </div>
 
     <div class="nav-links">
@@ -36,7 +32,8 @@
   </div>
 
   <div class="nav-right">
-    <img src="../../assets/img/logo.png" alt="Ioannis Logo" class="logo" />
+    <img src="../../assets/img/logo.png" alt="Ioannis Logo" class="logo"/>
+    <img src="../../assets/img/logo-mobile.png" alt="Ioannis Logo Mobile" class="logo-mobile"/>
   </div>
 
   <div class="burger-btn mobile-only" (click)="toggleMenu()" [class.open]="isMenuOpen">

@@ -87,6 +87,11 @@
   }
 }
 
+.logo-mobile {
+  display: none;
+  width: 40px;
+}
+
 .nav-right .logo {
   width: 150px;
 }
@@ -144,7 +149,7 @@
     display: flex;
   }
 
-  .nav-right .logo {
+  .nav-right {
     width: 120px;
   }
 
@@ -252,5 +257,13 @@
   .mobile-menu {
     right: 16px;
     padding: 30px 50px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: inline;
   }
 }
