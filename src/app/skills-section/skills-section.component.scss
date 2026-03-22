@@ -238,8 +238,8 @@
     gap: 48px; 
     max-width: 660px;
     margin: 80px auto;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .skills-info {
@@ -288,10 +288,6 @@
 }
 
 @media (max-width: 450px) {
-  .skills-section {
-    padding: 16px 16px;
-  }
-
   .subtitle {
     font-size: 20px;
     text-align: center;

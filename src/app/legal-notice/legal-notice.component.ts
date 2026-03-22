@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // NEU
+import { Router } from '@angular/router'; 
 import { NavbarComponent } from '../navbar/navbar.component'; 
 import { FooterComponent } from '../footer/footer.component'; 
 
@@ -11,10 +11,8 @@ import { FooterComponent } from '../footer/footer.component';
   styleUrl: './legal-notice.component.scss'
 })
 export class LegalNoticeComponent {
-  // Router im Constructor injecten
   constructor(private router: Router) {}
 
-  // Funktion zum Zurückkehren auf die Startseite
   goHome(): void {
     this.router.navigate(['/']);
   }
