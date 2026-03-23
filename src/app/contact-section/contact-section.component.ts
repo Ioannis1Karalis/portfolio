@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms'; 
 import { RouterLink } from '@angular/router';
 import { LanguageService } from '../language.service'; 
+import { HttpClient } from '@angular/common/http'; 
 
 @Component({
   selector: 'app-contact-section',
@@ -13,23 +14,56 @@ import { LanguageService } from '../language.service';
 })
 export class ContactSectionComponent {
   
-  constructor(public langService: LanguageService) {}
+  constructor(public langService: LanguageService, private http: HttpClient) {}
 
   contactData = {
     name: '',
     email: '',
-    message: '',
-    privacy: false
+    message: ''
+  };
+
+  privacyAccepted = false;
+
+  // Wenn die Seite live ist, auf 'false' setzen.
+  mailTest = true; 
+
+  post = {
+    endPoint: 'https://deineDomain.de/sendMail.php', // PHP-LINK EINTRAGEN
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
   };
 
   isSubmitted = false;
 
-  onSubmit(form: NgForm) {
-    if (form.valid) { 
-      console.log('Sende Nachricht...', this.contactData);
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            this.isSubmitted = true;
+            ngForm.resetForm();
+
+            setTimeout(() => {
+              this.isSubmitted = false;
+            }, 5000);
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      console.log('Testmodus aktiv: Formular würde jetzt gesendet werden.', this.contactData);
       
       this.isSubmitted = true;
-      form.resetForm();
+      ngForm.resetForm();
 
       setTimeout(() => {
         this.isSubmitted = false;
