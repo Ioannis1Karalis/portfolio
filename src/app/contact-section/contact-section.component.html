@@ -40,17 +40,10 @@
         }
         
         <input type="text" id="name" name="name" 
-               [placeholder]="langService.currentLang === 'EN' ? 'Your name goes here' : 'Dein Name kommt hierhin'" 
+               [class.has-error]="nameField.invalid && (nameField.touched || contactForm.submitted)"
+               [placeholder]="(nameField.invalid && (nameField.touched || contactForm.submitted)) ? (langService.currentLang === 'EN' ? 'Oops! It seems your name is missing' : 'Hoppla! Es scheint, als fehlt dein Name') : (langService.currentLang === 'EN' ? 'Your name goes here' : 'Dein Name kommt hierhin')" 
                required 
                [(ngModel)]="contactData.name" #nameField="ngModel" [ngModelOptions]="{ updateOn: 'blur' }"/>
-
-        <span class="error-msg" *ngIf="nameField.invalid && (nameField.touched || contactForm.submitted)">
-          @if (langService.currentLang === 'EN') {
-            Oops! It seems your name is missing
-          } @else {
-            Hoppla! Es scheint, als fehlt dein Name
-          }
-        </span>
       </div>
 
       <div class="input-group">
@@ -61,15 +54,10 @@
         }
         
         <input type="email" id="email" name="email" 
-               [placeholder]="langService.currentLang === 'EN' ? 'youremail@email.com' : 'deine-email@email.de'" 
+               [class.has-error]="emailField.invalid && (emailField.touched || contactForm.submitted)"
+               [placeholder]="(emailField.invalid && (emailField.touched || contactForm.submitted)) ? (langService.currentLang === 'EN' ? 'Hoppla! Your email is required and must be valid' : 'Hoppla! Deine E-Mail ist erforderlich und muss gültig sein') : (langService.currentLang === 'EN' ? 'youremail@email.com' : 'deine-email@email.de')" 
                required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-               [(ngModel)]="contactData.email" #emailField="ngModel" [ngModelOptions]="{ updateOn: 'blur' }"/> <span class="error-msg" *ngIf="emailField.invalid && (emailField.touched || contactForm.submitted)">
-          @if (langService.currentLang === 'EN') {
-            Hoppla! Your email is required and must be valid
-          } @else {
-            Hoppla! Deine E-Mail ist erforderlich und muss gültig sein
-          }
-        </span>
+               [(ngModel)]="contactData.email" #emailField="ngModel" [ngModelOptions]="{ updateOn: 'blur' }"/>
       </div>
 
       <div class="input-group">
@@ -80,17 +68,10 @@
         }
         
         <textarea id="message" name="message" 
-                  [placeholder]="langService.currentLang === 'EN' ? 'Hello Ioannis, I am interested in...' : 'Hallo Ioannis, ich interessiere mich für...'" 
+                  [class.has-error]="messageField.invalid && (messageField.touched || contactForm.submitted)"
+                  [placeholder]="(messageField.invalid && (messageField.touched || contactForm.submitted)) ? (langService.currentLang === 'EN' ? 'What do you need to develop?' : 'Was möchtest du entwickeln lassen?') : (langService.currentLang === 'EN' ? 'Hello Ioannis, I am interested in...' : 'Hallo Ioannis, ich interessiere mich für...')" 
                   rows="1" required
                   [(ngModel)]="contactData.message" #messageField="ngModel" [ngModelOptions]="{ updateOn: 'blur' }"></textarea>
-
-        <span class="error-msg" *ngIf="messageField.invalid && (messageField.touched || contactForm.submitted)">
-          @if (langService.currentLang === 'EN') {
-            What do you need to develop?
-          } @else {
-            Was möchtest du entwickeln lassen?
-          }
-        </span>
       </div>
 
       <div class="privacy-wrapper">
