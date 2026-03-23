@@ -150,7 +150,7 @@
   &:hover .custom-tooltip {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50px) translateY(0); 
+    transform: translateX(-25%) translateY(0); 
   }
 
   &:hover > span {
@@ -160,9 +160,9 @@
 
 .custom-tooltip {
   position: absolute;
-  bottom: 100px; 
+  bottom: calc(100% + 5px);
   left: 50%;
-  transform: translateX(-50px) translateY(10px);
+  transform: translateX(-25%) translateY(10px);
   background-color: #ffffff;
   border-radius: 16px;
   padding: 16px 24px;
@@ -181,7 +181,7 @@
     content: '';
     position: absolute;
     bottom: -10px; 
-    left: 50px; 
+    left: 25%; 
     transform: translateX(-50%);
     border-width: 10px 10px 0;
     border-style: solid;
@@ -325,21 +325,9 @@
   .skills-grid {
     gap: 32px 16px;
   }
-  
+
   .custom-tooltip {
-    left: auto;
-    right: -20px;
-    transform: translateY(10px);
-    
-    &::after {
-      left: auto;
-      right: 30px; 
-      transform: none;
-    }
-  }
-  
-  .skill-item.has-tooltip:hover .custom-tooltip {
-      transform: translateY(0);
+    padding: 10px 14px;
   }
 }
 
