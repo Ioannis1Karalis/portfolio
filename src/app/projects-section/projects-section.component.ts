@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../language.service'; 
+import { ProjectOverlayComponent } from '../project-overlay/project-overlay.component'; // Pfad anpassen!
 
 @Component({
   selector: 'app-projects-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProjectOverlayComponent], // <-- HIER HINZUFÜGEN
   templateUrl: './projects-section.component.html',
   styleUrl: './projects-section.component.scss'
 })
+
 export class ProjectsSectionComponent {
   
   constructor(public langService: LanguageService) {}

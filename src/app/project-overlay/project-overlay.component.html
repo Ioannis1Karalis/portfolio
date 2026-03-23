@@ -1,0 +1,58 @@
+<div class="overlay-backdrop" (click)="closeOverlay()">
+  
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    
+    <button class="close-btn" (click)="closeOverlay()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="modal-left">
+      <span class="project-number">{{ currentProject.id }}</span>
+      <h2 class="project-title">{{ currentProject.title }}</h2>
+      
+      @if (langService.currentLang === 'EN') {
+        <h3 class="subtitle">What is this project about?</h3>
+      } @else {
+        <h3 class="subtitle">Worum geht es in diesem Projekt?</h3>
+      }
+      
+      <p class="description">{{ currentProject.description }}</p>
+
+      <div class="skills-container">
+        @for (skill of currentProject.skills; track skill) {
+          <div class="skill-badge">
+            <img [src]="'../../assets/img/icons/frontend-skills/overlay-icons/' + skill + '.png'" [alt]="skill">
+            <span>{{ skill }}</span>
+          </div>
+        }
+      </div>
+
+      <div class="action-left">
+        <a [href]="currentProject.githubUrl" target="_blank" class="outline-btn">
+          GitHub 
+          <img src="../../assets/img/icons/other-icons/arrow_outward_green.png" class="arrow-img" alt="Pfeil">
+        </a>
+        <a [href]="currentProject.liveUrl" target="_blank" class="outline-btn">
+          Live Test
+          <img src="../../assets/img/icons/other-icons/arrow_outward_green.png" class="arrow-img" alt="Pfeil">
+        </a>
+      </div>
+    </div>
+
+    <div class="modal-right">
+      <img [src]="currentProject.image" alt="Project Preview" class="project-image">
+    </div>
+
+    <button class="next-btn" (click)="nextProject()">
+      @if (langService.currentLang === 'EN') {
+        Next project 
+      } @else {
+        Nächstes Projekt 
+      }
+      <img src="../../assets/img/icons/other-icons/arrow.png" class="next-arrow" alt="Next">
+    </button>
+
+  </div>
+</div>
