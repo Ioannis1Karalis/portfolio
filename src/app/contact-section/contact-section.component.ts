@@ -23,12 +23,10 @@ export class ContactSectionComponent {
   };
 
   privacyAccepted = false;
-
-  // Wenn die Seite live ist, auf 'false' setzen.
-  mailTest = true; 
+  mailTest = false; 
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php', // PHP-LINK EINTRAGEN
+    endPoint: 'https://ikaralis.com/sendMail.php', // PHP-LINK EINTRAGEN
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
