@@ -254,11 +254,16 @@
       border-radius: 30px;
       cursor: pointer;
       transition: all 0.3s ease;
+      overflow: hidden;
+      display: inline-flex;
 
       &:hover:not(.is-disabled) {
         border-color: #3dcfb6;
         color: #3dcfb6;
-        background-color: rgba(61, 207, 182, 0.05);
+
+        >span {
+        animation: simpleMarquee 1.7s linear infinite;
+        }
       }
 
       &.is-disabled {
@@ -268,6 +273,21 @@
         color: rgba(255, 255, 255, 0.4);
       }
     }
+
+    @keyframes simpleMarquee {
+    0% {
+      transform: translateX(0);
+    }
+    49% {
+      transform: translateX(-150%);
+    }
+    50% {
+      transform: translateX(150%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 
     .success-message {
       color: #3dcfb6;
