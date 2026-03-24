@@ -4,15 +4,17 @@
   left: 0;
   width: 150px;  
   height: 150px; 
-  background: radial-gradient(
-    circle, 
-    rgba(61, 207, 182, 0.2) 0%,
-    rgba(0, 0, 0, 0) 60% 
-  );
+  background: radial-gradient(circle,rgba(61, 207, 182, 0.2) 0%,rgba(0, 0, 0, 0) 60%);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 9999; 
   mix-blend-mode: screen;
   transition: opacity 0.3s ease;
+}
+
+@media (max-width: 950px) {
+  .cursor-glow {
+    display: none !important;
+  }
 }

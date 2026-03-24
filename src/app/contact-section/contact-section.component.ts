@@ -26,7 +26,7 @@ export class ContactSectionComponent {
   mailTest = false; 
 
   post = {
-    endPoint: 'https://ikaralis.com/sendMail.php', // PHP-LINK EINTRAGEN
+    endPoint: 'https://ikaralis.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
