@@ -42,8 +42,12 @@ case("POST"):
                     </div>
                 </div>
                 
-                <div style='background-color: #f1f1f1; padding: 15px; text-align: center; font-size: 12px; color: #777777;'>
-                    Diese E-Mail wurde automatisch von deinem Kontaktformular auf <strong>ikaralis.com</strong> gesendet.
+                <div style='background-color: #333333; padding: 30px 20px; text-align: center;'>
+                    <img src='https://ikaralis.com/assets/img/logo.png' alt='Ioannis Logo' style='height: 40px; width: auto; margin-bottom: 15px; display: inline-block;'/>
+                    
+                    <div style='font-size: 12px; color: rgba(255, 255, 255, 0.6); line-height: 1.5;'>
+                        Diese E-Mail wurde automatisch von deinem Kontaktformular auf <strong style='color: #3DCFB6;'>ikaralis.com</strong> gesendet.
+                    </div>
                 </div>
             </div>
             ";
@@ -52,7 +56,7 @@ case("POST"):
             $headers[] = 'MIME-Version: 1.0';
             $headers[] = 'Content-type: text/html; charset=utf-8';
 
-            $headers[] = "From: noreply@ikaralis.com";
+            $headers[] = "From: Portfolio Kontakt <noreply@ikaralis.com>";
 
             mail($recipient, $subject, $htmlMessage, implode("\r\n", $headers));
             break;
