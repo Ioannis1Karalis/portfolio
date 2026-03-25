@@ -15,7 +15,7 @@ case("POST"):
             $subject = "Neue Projektanfrage von: $name";
             
             $htmlMessage = "
-            <div style='font-family: Arial, sans-serif; color: #333333; max-width: 600px; margin: 0 auto; border: 1px solid #eeeeee; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);'>
+            <div style='font-family: Arial, sans-serif; color: #333333; max-width: 600px; margin: 0 auto; border: 1px solid #333333; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);'>
                 
                 <div style='background-color: #3DCFB6; padding: 25px; text-align: center;'>
                     <h2 style='color: #ffffff; margin: 0; font-size: 24px;'>Neue Anfrage 🚀</h2>
