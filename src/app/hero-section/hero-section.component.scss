@@ -108,8 +108,8 @@
 .ticker-wrap {
   position: absolute;
   bottom: 120px;
-  left: -5%;
-  width: 110%;
+  left: 0;
+  width: 100%;
   background-color: rgba(#ffffff, 0.12);
   padding: 15px 0;
   overflow: hidden;
@@ -147,7 +147,6 @@
     transform: translateX(-50%);
   }
 }
-
 
 .scroll-indicator-left {
   position: absolute;

@@ -27,7 +27,7 @@ export class AppComponent implements AfterViewInit {
           duration: 1000,
           once: true,
           offset: 200,
-          disableMutationObserver: true 
+          disableMutationObserver: true
         });
       }, 100);
 

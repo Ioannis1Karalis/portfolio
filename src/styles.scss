@@ -48,3 +48,15 @@ textarea,
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
+
+section, 
+.hero, 
+.footer-section, 
+app-about, 
+app-projects, 
+app-contact {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: clip;
+  box-sizing: border-box;
+}
