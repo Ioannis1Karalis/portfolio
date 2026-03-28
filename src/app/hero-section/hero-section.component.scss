@@ -19,6 +19,18 @@
   }
 }
 
+.hero-content-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1440px; 
+  pointer-events: none; 
+  z-index: 20;
+}
+
 .title {
   display: flex;
   justify-content: center;
@@ -95,7 +107,7 @@
 
 .ticker-wrap {
   position: absolute;
-  bottom: 44px;
+  bottom: 120px;
   left: -5%;
   width: 110%;
   background-color: rgba(#ffffff, 0.12);
@@ -136,15 +148,17 @@
   }
 }
 
+
 .scroll-indicator-left {
   position: absolute;
-  left: 96px;
+  left: 40px;
   bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
   z-index: 20;
+  pointer-events: auto;
 
   .circle-arrow {
     width: 30px;
@@ -165,7 +179,7 @@
 
   .line-green {
     width: 1px;
-    height: 240px;
+    height: 300px;
     background-color: rgba(61, 207, 182, 0.4);
   }
 }
@@ -182,13 +196,14 @@
 
 .social-indicator-right {
   position: absolute;
-  right: 64px;
+  right: 40px;
   bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
   z-index: 1;
+  pointer-events: auto;
 
   .email-link {
     writing-mode: vertical-rl;
@@ -268,7 +283,7 @@
 
   .line-white {
     width: 1px;
-    height: 186px;
+    height: 260px;
     background-color: rgba(255, 255, 255, 0.3);
   }
 }
@@ -336,7 +351,7 @@
   }
 
   .ticker-wrap {
-    bottom: 24px;
+    bottom: 38px;
   }
   .ticker-content > span {
     font-size: 24px;
