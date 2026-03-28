@@ -1,6 +1,7 @@
-import { Component, Inject, PLATFORM_ID, Renderer2, ElementRef, NgZone, AfterViewInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, Inject, PLATFORM_ID, NgZone, AfterViewInit } from '@angular/core';
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -13,30 +14,40 @@ export class AppComponent implements AfterViewInit {
   title = 'portfolio';
 
   constructor(
-    private renderer: Renderer2,
-    private el: ElementRef,
-    private ngZone: NgZone, // <-- NEU: Der Change-Detection-Bremser
-    @Inject(PLATFORM_ID) private platformId: Object // <-- NEU: Der Browser-Check
+    private ngZone: NgZone, 
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private router: Router
   ) { }
 
   ngAfterViewInit() {
-    // 1. Zuerst prüfen: Sind wir im Browser (nicht auf dem Server)?
     if (isPlatformBrowser(this.platformId)) {
       
-      const glowElement = this.el.nativeElement.querySelector('.cursor-glow');
+      setTimeout(() => {
+        AOS.init({
+          duration: 1000,
+          once: true,
+          offset: 200,
+          disableMutationObserver: true 
+        });
+      }, 100);
 
-      // 2. Das ist der wichtigste Trick: Den Listener "außerhalb von Angular" starten!
-      this.ngZone.runOutsideAngular(() => {
-        this.renderer.listen('document', 'mousemove', (event: MouseEvent) => {
+      this.router.events.subscribe(event => {
+        if (event instanceof NavigationEnd) {
           
-          // 3. Hier führen wir nur das JavaScript-Positionieren durch.
-          // Angular wird NICHT informiert, dass sich eine Variable geändert hat!
-          if (glowElement) {
-            glowElement.style.left = `${event.clientX}px`;
-            glowElement.style.top = `${event.clientY}px`;
-          }
+          setTimeout(() => {
+            AOS.refreshHard();
+          }, 100);
+          
+        }
+      });
+
+      this.ngZone.runOutsideAngular(() => {
+        document.addEventListener('mousemove', (e: MouseEvent) => {
+          document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+          document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
         });
       });
+
     }
   }
 }
