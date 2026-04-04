@@ -11,7 +11,7 @@ case("POST"):
             $name = htmlspecialchars($params->name);
             $message = nl2br(htmlspecialchars($params->message));
     
-            $recipient = 'i.karalis@outlook.de';  
+            $recipient = 'hello@ikaralis.com';  
             $subject = "Neue Projektanfrage von: $name";
             
             $htmlMessage = "
