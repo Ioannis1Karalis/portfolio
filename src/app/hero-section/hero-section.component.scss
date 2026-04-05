@@ -344,13 +344,22 @@
 
   .scroll-indicator-left {
     left: 24px;
+
+    .line-green {
+      height: 200px;
+    }
   }
+
   .social-indicator-right {
     right: 24px;
+
+    .line-white {
+      height: 160px;
+    }
   }
 
   .ticker-wrap {
-    bottom: 38px;
+    bottom: 66px;
   }
   .ticker-content > span {
     font-size: 24px;
@@ -398,13 +407,6 @@
     right: 16px;
   }
 
-  .scroll-indicator-left .line-green {
-    height: 120px;
-  }
-  .social-indicator-right .line-white {
-    height: 120px;
-  }
-
   .buttons {
     width: 100%;
     justify-content: center;
@@ -438,5 +440,63 @@
     padding: 6px 9px;
     font-size: 12px;
     min-width: 80px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  
+  .hero, .title {
+    height: auto !important;
+    min-height: 200px;
+    padding: 60px 0; 
+  }
+
+  .title {
+    justify-content: center;
+    
+    h1 {
+      font-size: 48px !important;
+      margin-bottom: 10px;
+    }
+    
+    span {
+      font-size: 18px !important;
+    }
+  }
+
+  .buttons {
+    padding-top: 10px;
+    gap: 15px;
+    
+    .marquee-btn {
+      padding: 6px 20px;
+      font-size: 14px;
+    }
+  }
+
+  .ticker-wrap {
+    bottom: 66px !important;
+    padding: 8px 0;
+    
+    .ticker-content span {
+      font-size: 18px;
+    }
+  }
+
+  .scroll-indicator-left {
+    bottom: 20px; 
+    
+    .line-green {
+      height: 130px;
+    }
+  }
+
+  .social-indicator-right{
+    gap: 20px;
+    bottom: 20px; 
+
+    .line-white{
+      height: 110px;
+    }
   }
 }
