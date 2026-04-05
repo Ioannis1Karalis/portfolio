@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../language.service'; 
-import { ProjectOverlayComponent } from '../project-overlay/project-overlay.component'; // Pfad anpassen!
+import { ProjectOverlayComponent } from '../project-overlay/project-overlay.component'; 
 
 @Component({
   selector: 'app-projects-section',
   standalone: true,
-  imports: [CommonModule, ProjectOverlayComponent], // <-- HIER HINZUFÜGEN
+  imports: [CommonModule, ProjectOverlayComponent], 
   templateUrl: './projects-section.component.html',
   styleUrl: './projects-section.component.scss'
 })
@@ -26,7 +26,7 @@ export class ProjectsSectionComponent {
           description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
           skills: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
           githubUrl: 'https://github.com/Ioannis1Karalis/Join.git',
-          liveUrl: 'https://ioannis-karalis.developerakademie.net/JoinKanban/login.html',
+          liveUrl: 'https://join.ikaralis.com/login.html',
           image: '../../assets/img/projects/join.png'
         },
         {
@@ -35,7 +35,7 @@ export class ProjectsSectionComponent {
           description: 'A jump and run game based on object-oriented programming. Help Sharkie to find the magic coins and fight the killer whale.',
           skills: ['JavaScript', 'HTML', 'CSS'],
           githubUrl: 'https://github.com/Ioannis1Karalis/Sharkie.git',
-          liveUrl: 'https://ioannis-karalis.developerakademie.net/sharkie/index.html',
+          liveUrl: 'https://sharkie.ikaralis.com/index.html',
           image: '../../assets/img/projects/sharkie.png'
         },
         {
@@ -44,7 +44,7 @@ export class ProjectsSectionComponent {
           description: 'An interactive digital library for Pokémon. Fetch data via REST-API to search for species and explore their detailed stats and abilities.',
           skills: ['JavaScript', 'HTML', 'CSS', 'REST-API'], 
           githubUrl: 'https://github.com/Ioannis1Karalis/Pokedex.git',
-          liveUrl: 'https://ioannis-karalis.developerakademie.net/pokedex/index.html',
+          liveUrl: 'http://pokedex.ikaralis.com/index.html',
           image: '../../assets/img/projects/pokedex.png'
         },
         {
@@ -53,7 +53,7 @@ export class ProjectsSectionComponent {
           description: 'A real-time multiplayer version of the classic party game. Join your friends online, draw cards, and complete the fun challenges together.',
           skills: ['Angular','TypeScript', 'HTML', 'CSS', 'Firebase'],
           githubUrl: 'https://github.com/Ioannis1Karalis/Ring-of-Fire.git',
-          liveUrl: 'https://ioannis-karalis.developerakademie.net/angular-projects/ringoffire/',
+          liveUrl: 'https://ringoffire.ikaralis.com/index.html',
           image: '../../assets/img/projects/ringoffire.png'
         },
         {
@@ -62,7 +62,7 @@ export class ProjectsSectionComponent {
           description: 'A responsive web application for food delivery. Browse the menu, add your favorite meals to the cart, and view the calculated total price.',
           skills: ['JavaScript', 'HTML', 'CSS'],
           githubUrl: 'https://github.com/Ioannis1Karalis/BestellApp.git',
-          liveUrl: 'https://ioannis-karalis.developerakademie.net/bestellapp/index.html',
+          liveUrl: 'https://bestellapp.ikaralis.com/index.html',
           image: '../../assets/img/projects/bestellapp.png'
         }
       ];
@@ -74,7 +74,7 @@ export class ProjectsSectionComponent {
           description: 'Ein Task-Manager, inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop und weise Benutzer und Kategorien zu.',
           skills: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
           githubUrl: 'https://github.com/Ioannis1Karalis/Join.git',
-          liveUrl: 'https://ioannis-karalis.developerakademie.net/JoinKanban/login.html',
+          liveUrl: 'https://join.ikaralis.com/login.html',
           image: '../../assets/img/projects/join.png'
         },
         {
@@ -83,7 +83,7 @@ export class ProjectsSectionComponent {
           description: 'Ein Jump-and-Run-Spiel, basierend auf objektorientierter Programmierung. Hilf Sharkie, die magischen Münzen zu finden und besiege den Killerwal.',
           skills: ['JavaScript', 'HTML', 'CSS'],
           githubUrl: 'https://github.com/Ioannis1Karalis/Sharkie.git',
-          liveUrl: 'https://ioannis-karalis.developerakademie.net/sharkie/index.html',
+          liveUrl: 'https://sharkie.ikaralis.com/index.html',
           image: '../../assets/img/projects/sharkie.png'
         },
         {
@@ -92,7 +92,7 @@ export class ProjectsSectionComponent {
           description: 'Eine interaktive digitale Bibliothek für Pokémon. Rufe Daten über eine REST-API ab, um nach Arten zu suchen und ihre detaillierten Werte und Fähigkeiten zu erkunden.',
           skills: ['JavaScript', 'HTML', 'CSS', 'REST-API'], 
           githubUrl: 'https://github.com/Ioannis1Karalis/Pokedex.git',
-          liveUrl: 'https://ioannis-karalis.developerakademie.net/pokedex/index.html',
+          liveUrl: 'http://pokedex.ikaralis.com/index.html',
           image: '../../assets/img/projects/pokedex.png'
         },
         {
@@ -101,7 +101,7 @@ export class ProjectsSectionComponent {
           description: 'Eine Echtzeit-Multiplayer-Version des klassischen Partyspiels. Tritt deinen Freunden online bei, ziehe Karten und meistert gemeinsam lustige Herausforderungen.',
           skills: ['Angular','TypeScript', 'HTML', 'CSS', 'Firebase'],
           githubUrl: 'https://github.com/Ioannis1Karalis/Ring-of-Fire.git',
-          liveUrl: 'https://ioannis-karalis.developerakademie.net/angular-projects/ringoffire/',
+          liveUrl: 'https://ringoffire.ikaralis.com/index.html',
           image: '../../assets/img/projects/ringoffire.png'
         },
         {
@@ -110,7 +110,7 @@ export class ProjectsSectionComponent {
           description: 'Eine responsive Webanwendung für Essensbestellungen. Durchstöbere die Speisekarte, lege deine Lieblingsgerichte in den Warenkorb und sieh dir den berechneten Gesamtpreis an.',
           skills: ['JavaScript', 'HTML', 'CSS'],
           githubUrl: 'https://github.com/Ioannis1Karalis/BestellApp.git',
-          liveUrl: 'https://ioannis-karalis.developerakademie.net/bestellapp/index.html',
+          liveUrl: 'https://bestellapp.ikaralis.com/index.html',
           image: '../../assets/img/projects/bestellapp.png'
         }
       ];

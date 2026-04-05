@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LanguageService } from '../language.service'; // Pfad ggf. anpassen!
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-project-overlay',
