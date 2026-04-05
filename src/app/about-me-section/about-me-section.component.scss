@@ -13,32 +13,29 @@
 .portrait-photo {
   position: relative;
   width: 100%;
-  max-width: 450px;
+  max-width: 450px; 
   flex-shrink: 0;
+  margin-left: 0;
 
   img {
-    width: 100%;
+    width: calc(100% - 32px); 
+    margin-left: 32px; 
     border-radius: 32px;
     filter: grayscale(100%);
     position: relative;
     z-index: 2;
+    display: block;
   }
 
   .lines-bg {
     position: absolute;
     bottom: -30px;
-    left: -32px;
-    width: 100%;
+    left: 0; 
+    width: calc(100% - 32px); 
     height: 100%;
     border-radius: 32px;
     z-index: 1;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 18px,
-      #3dcfb6 20px,
-      #3dcfb6 21px
-    );
+    background: repeating-linear-gradient(45deg, transparent, transparent 18px,#3dcfb6 20px, #3dcfb6 21px);
   }
 }
 
@@ -121,18 +118,14 @@
     margin: 80px auto;
   }
 
-  .lines-bg {
-    display: none;
-  }
-
   .portrait-photo {
-  max-width: 600px;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
   }
 
   .myInformations {
     max-width: 600px;
   }
-
 }
 
 @media (max-width: 500px) {
