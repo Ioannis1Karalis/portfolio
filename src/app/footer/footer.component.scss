@@ -16,12 +16,12 @@
 }
 
 .left-side {
-  order: 1; 
   display: flex;
   flex-direction: column;
   gap: 8px;
 
   .logo {
+    display: block;
     height: 48px;
     object-fit: contain;
     object-position: left;
@@ -36,7 +36,6 @@
 }
 
 .right-side {
-  order: 2;
   display: flex;
   flex-direction: column;
   gap: 12px; 
@@ -76,8 +75,7 @@
   }
 }
 
-.center-side {
-  order: 3; 
+.center-side { 
   width: 100%; 
   display: flex;
   justify-content: center; 
