@@ -26,7 +26,7 @@ export class ProjectsSectionComponent {
           description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
           skills: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
           githubUrl: 'https://github.com/Ioannis1Karalis/Join.git',
-          liveUrl: 'https://join.ikaralis.com/login.html',
+          liveUrl: 'https://ikaralis.com/projects/join.ikaralis.com/login.html',
           image: '../../assets/img/projects/join.png'
         },
         {
@@ -35,7 +35,7 @@ export class ProjectsSectionComponent {
           description: 'A jump and run game based on object-oriented programming. Help Sharkie to find the magic coins and fight the killer whale.',
           skills: ['JavaScript', 'HTML', 'CSS'],
           githubUrl: 'https://github.com/Ioannis1Karalis/Sharkie.git',
-          liveUrl: 'https://sharkie.ikaralis.com/index.html',
+          liveUrl: 'https://ikaralis.com/projects/sharkie.ikaralis.com/index.html',
           image: '../../assets/img/projects/sharkie.png'
         },
         {
@@ -44,7 +44,7 @@ export class ProjectsSectionComponent {
           description: 'An interactive digital library for Pokémon. Fetch data via REST-API to search for species and explore their detailed stats and abilities.',
           skills: ['JavaScript', 'HTML', 'CSS', 'REST-API'], 
           githubUrl: 'https://github.com/Ioannis1Karalis/Pokedex.git',
-          liveUrl: 'http://pokedex.ikaralis.com/index.html',
+          liveUrl: 'https://ikaralis.com/projects/pokedex.ikaralis.com/index.html',
           image: '../../assets/img/projects/pokedex.png'
         },
         {
@@ -53,7 +53,7 @@ export class ProjectsSectionComponent {
           description: 'A real-time multiplayer version of the classic party game. Join your friends online, draw cards, and complete the fun challenges together.',
           skills: ['Angular','TypeScript', 'HTML', 'CSS', 'Firebase'],
           githubUrl: 'https://github.com/Ioannis1Karalis/Ring-of-Fire.git',
-          liveUrl: 'https://ringoffire.ikaralis.com/index.html',
+          liveUrl: 'https://ikaralis.com/projects/ringoffire.ikaralis.com/',
           image: '../../assets/img/projects/ringoffire.png'
         },
         {
@@ -62,7 +62,7 @@ export class ProjectsSectionComponent {
           description: 'A responsive web application for food delivery. Browse the menu, add your favorite meals to the cart, and view the calculated total price.',
           skills: ['JavaScript', 'HTML', 'CSS'],
           githubUrl: 'https://github.com/Ioannis1Karalis/BestellApp.git',
-          liveUrl: 'https://bestellapp.ikaralis.com/index.html',
+          liveUrl: 'https://ikaralis.com/projects/bestellapp.ikaralis.com/index.html',
           image: '../../assets/img/projects/bestellapp.png'
         }
       ];
